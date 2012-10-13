@@ -1,0 +1,6 @@
+auto: true
+server: true
+markdown: rdiscount
+
+title: 'Website'
+baseurl: '/'

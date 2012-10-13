@@ -1,5 +1,9 @@
 module.exports = function(grunt) {
-  grunt.initConfig(<%= JSON.stringify(config, null, 2) %>);
+  grunt.initConfig({
+  "server": {
+    "port": 4000
+  }
+});
 
   grunt.loadTasks('tasks');
 };
