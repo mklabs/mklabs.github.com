@@ -6,6 +6,17 @@ title: Placeholder post, so wonderfull.
 **{{ page.title }}** written in markdown.
 
 
+---
+
+{{ site.tagline }}
+
+---
+
+{{ site.url }}
+
+---
+
+
 Some change sir.
 
 Very please to see changes applied in live.
