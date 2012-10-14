@@ -15,11 +15,8 @@ the new Github Page generation thing, with all these new shiny themes. I
 thought "Would be cool to set this up as yeoman generators, probably as remote
 templates?"
 
-I also wanted the generator to generate from a minimalist and efficient starting
-point for Jekyll. So, I started building the thing on @necolas'
-[jekyll-boilerplate](https://github.com/necolas/jekyll-boilerplate)
-
-point for Jekyll. So, I started building the thing on
+I also wanted the generator to generate from a minimalist and efficient
+starting point for Jekyll. So, I started building the thing on
 [@necolas](https://github.com/necolas)'
 [jekyll](https://github.com/necolas/jekyll-boilerplate) project.
 
