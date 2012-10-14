@@ -12,7 +12,11 @@ title: Placeholder post, so wonderfull.
 
 ---
 
-{{ site.url }}
+url: {{ site.url }}
+
+---
+
+env: {{ site.env }}
 
 ---
 
