@@ -1,8 +1,9 @@
 auto: true
 server: true
 markdown: rdiscount
+permalink: /:categories/:title/
 
-title: 'Website'
+title: 'mklabs.github.com'
 baseurl: '/'
 tagline: 'Oops, did it again'
 
