@@ -1,0 +1,8 @@
+node_modules/
+Gruntfile.js
+package.json
+README.md
+_temp
+.buildignore
+.gitignore
+.yeomanrc
