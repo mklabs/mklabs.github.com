@@ -19,4 +19,9 @@ I also wanted the generator to generate from a minimalist and efficient starting
 point for Jekyll. So, I started building the thing on @necolas'
 [jekyll-boilerplate](https://github.com/necolas/jekyll-boilerplate)
 
+point for Jekyll. So, I started building the thing on @necolas' [jekyll](https://github.com/necolas/jekyll-boilerplate)
+
+### Authors and Contributors
+You can @mention a GitHub username to generate a link to their profile. The resulting `<a>` element will link to the contributor's GitHub Profile. For example: In 2007, Chris Wanstrath (@defunkt), PJ Hyett (@pjhyett), and Tom Preston-Werner (@mojombo) founded GitHub.
+
 about making the generator to act on on another repository
