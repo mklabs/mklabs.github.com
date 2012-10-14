@@ -379,7 +379,7 @@ Gruntfile. In case there are no config for jekyll, this sets up the default
 watch configuration. We watch for any changes within `_site`, and notify
 connected clients via the reload task and LiveReload mechanism.
 
-{% highlight %}
+{% highlight js %}
 var watch = grunt.config('watch.jekyll');
 // already configured, noop.
 if(watch) return;
@@ -395,7 +395,7 @@ very basic HTTP server. Its main role is to enable the connection via
 LiveReload browser extensions, we don't want to use that server for browsing
 only to allow the extensions to establish connection.
 
-{% highlight %}
+{% highlight js %}
 var livereload = 'https://raw.github.com/livereload/livereload-js/master/dist/livereload.js';
 var server = http.createServer(function(req, res) {
   var url = parse(req.url);
