@@ -1,0 +1,1667 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=1024" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title>Yeoman</title>
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:regular,semibold,italic,italicsemibold|PT+Sans:400,700,400italic,700italic|PT+Serif:400,700,400italic,700italic" rel="stylesheet" />
+    <style>
+/* HTML5 Boilerplate  */
+
+article, aside, details, figcaption, figure, footer, header, hgroup, nav, section { display: block; }
+audio, canvas, video { display: inline-block; *display: inline; *zoom: 1; }
+audio:not([controls]) { display: none; }
+[hidden] { display: none; }
+
+html { font-size: 100%; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
+html, button, input, select, textarea { font-family: sans-serif; color: #222; }
+body { margin: 0; font-size: 1em; line-height: 1.4; }
+
+::-moz-selection { background: #444; color: #fff; text-shadow: none; }
+::selection { background: #444; color: #fff; text-shadow: none; }
+
+a { color: #00e; }
+a:visited { color: #551a8b; }
+a:hover { color: #06e; }
+a:focus { outline: thin dotted; }
+a:hover, a:active { outline: 0; }
+abbr[title] { border-bottom: 1px dotted; }
+b, strong { font-weight: bold; }
+blockquote { margin: 1em 40px; }
+dfn { font-style: italic; }
+hr { display: block; height: 1px; border: 0; border-top: 1px solid #ccc; margin: 1em 0; padding: 0; }
+ins { background: #ff9; color: #000; text-decoration: none; }
+mark { background: #ff0; color: #000; font-style: italic; font-weight: bold; }
+pre, code, kbd, samp { font-family: monospace, serif; _font-family: 'courier new', monospace; font-size: 1em; }
+pre { white-space: pre; white-space: pre-wrap; word-wrap: break-word; }
+
+q { quotes: none; }
+q:before, q:after { content: ""; content: none; }
+small { font-size: 85%; }
+sub, sup { font-size: 75%; line-height: 0; position: relative; vertical-align: baseline; }
+sup { top: -0.5em; }
+sub { bottom: -0.25em; }
+
+ul, ol { margin: 1em 0; padding: 0 0 0 40px; }
+dd { margin: 0 0 0 40px; }
+nav ul, nav ol { list-style: none; list-style-image: none; margin: 0; padding: 0; }
+
+img { border: 0; -ms-interpolation-mode: bicubic; vertical-align: middle; }
+svg:not(:root) { overflow: hidden; }
+figure { margin: 0; }
+
+form { margin: 0; }
+fieldset { border: 0; margin: 0; padding: 0; }
+
+label { cursor: pointer; }
+legend { border: 0; *margin-left: -7px; padding: 0; white-space: normal; }
+button, input, select, textarea { font-size: 100%; margin: 0; vertical-align: baseline; *vertical-align: middle; }
+button, input { line-height: normal; }
+button, input[type="button"], input[type="reset"], input[type="submit"] { cursor: pointer; -webkit-appearance: button; *overflow: visible; }
+button[disabled], input[disabled] { cursor: default; }
+input[type="checkbox"], input[type="radio"] { box-sizing: border-box; padding: 0; *width: 13px; *height: 13px; }
+input[type="search"] { -webkit-appearance: textfield; -moz-box-sizing: content-box; -webkit-box-sizing: content-box; box-sizing: content-box; }
+input[type="search"]::-webkit-search-decoration, input[type="search"]::-webkit-search-cancel-button { -webkit-appearance: none; }
+button::-moz-focus-inner, input::-moz-focus-inner { border: 0; padding: 0; }
+textarea { overflow: auto; vertical-align: top; resize: vertical; }
+input:valid, textarea:valid {  }
+input:invalid, textarea:invalid { background-color: #f0dddd; }
+
+table { border-collapse: collapse; border-spacing: 0; }
+td { vertical-align: top; }
+
+.chromeframe { margin: 0.2em 0; background: #ccc; color: black; padding: 0.2em 0; }
+
+
+
+
+
+
+
+
+
+@media only screen and (min-width: 35em) {
+
+
+}
+
+.ir { display: block; border: 0; text-indent: -999em; overflow: hidden; background-color: transparent; background-repeat: no-repeat; text-align: left; direction: ltr; *line-height: 0; }
+.ir br { display: none; }
+.hidden { display: none !important; visibility: hidden; }
+.visuallyhidden { border: 0; clip: rect(0 0 0 0); height: 1px; margin: -1px; overflow: hidden; padding: 0; position: absolute; width: 1px; }
+.visuallyhidden.focusable:active, .visuallyhidden.focusable:focus { clip: auto; height: auto; margin: 0; overflow: visible; position: static; width: auto; }
+.invisible { visibility: hidden; }
+.clearfix:before, .clearfix:after { content: ""; display: table; }
+.clearfix:after { clear: both; }
+.clearfix { *zoom: 1; }
+
+@media print {
+  * { background: transparent !important; color: black !important; box-shadow:none !important; text-shadow: none !important; filter:none !important; -ms-filter: none !important; }
+  a, a:visited { text-decoration: underline; }
+  a[href]:after { content: " (" attr(href) ")"; }
+  abbr[title]:after { content: " (" attr(title) ")"; }
+  .ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after { content: ""; }
+  pre, blockquote { border: 1px solid #999; page-break-inside: avoid; }
+  thead { display: table-header-group; }
+  tr, img { page-break-inside: avoid; }
+  img { max-width: 100% !important; }
+  @page { margin: 0.5cm; }
+  p, h2, h3 { orphans: 3; widows: 3; }
+  h2, h3 { page-break-after: avoid; }
+}
+
+/** Impress and presentation styles **/
+body {
+  font-size: 100%;
+  color: #222;
+  font-family: 'PT Sans', sans-serif;
+  min-height: 740px;
+  background: #fff;
+}
+
+
+body hr {
+  display: none;
+}
+
+a, a:visited, .buddy {
+  color: #08d;
+  display: inline-block;
+  text-decoration: none;
+  padding: 0 0.1em;
+  text-shadow: -1px -1px 2px rgba(100,100,100,0.9);
+  border-radius: 0.2em;
+  -webkit-transition: 0.5s;
+  -moz-transition:    0.5s;
+  -ms-transition:     0.5s;
+  -o-transition:      0.5s;
+  transition:         0.5s;
+}
+
+a:hover,
+a:focus {
+  text-shadow: -1px -1px 2px rgba(100,100,100,0.5);
+  color: #222;
+}
+
+.fallback-message {
+  font-family: sans-serif;
+  line-height: 1.3;
+  width: 780px;
+  padding: 10px 10px 0;
+  margin: 20px auto;
+  border: 1px solid #E4C652;
+  border-radius: 10px;
+  background: #EEDC94;
+}
+
+.fallback-message p {
+  margin-bottom: 10px;
+}
+
+.impress-supported .fallback-message {
+  display: none;
+}
+
+
+.step {
+  position: relative;
+  width: 900px;
+  padding: 40px;
+  margin: 20px auto;
+
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing:    border-box;
+  -ms-box-sizing:     border-box;
+  -o-box-sizing:      border-box;
+  box-sizing:         border-box;
+  line-height: 1.5;
+}
+
+.impress-enabled .step {
+  margin: 0;
+  opacity: 0.1;
+
+  -webkit-transition: opacity 1s;
+  -moz-transition:    opacity 1s;
+  -ms-transition:     opacity 1s;
+  -o-transition:      opacity 1s;
+  transition:         opacity 1s;
+}
+
+.impress-enabled .step.active { opacity: 1 }
+
+.slide {
+  box-shadow: 0 0 20px silver;
+  border-radius: 3px;
+  background-clip: padding-box;
+  height: 740px;
+  position: relative;
+  width: 940px;
+  font-weight: normal;
+
+  font-family:'Open Sans', Arial, sans-serif;
+  font-size:31px;
+  color: #444;
+}
+
+.slide q {
+  display: block;
+  font-size: 100%;
+  line-height: 72px;
+
+  margin-top: 100px;
+}
+
+.slide q strong {
+  white-space: nowrap;
+}
+
+.slide em {
+  font-style: normal;
+  color: #888;
+}
+
+.slide h1, .slide h2, .slide h3, .slide h4, .slide h5 {
+  font-weight: bold;
+  margin: 0;
+}
+
+.slide h1 {
+  font-size: 2.5em;
+  margin-top: 0;
+}
+
+.slide h2 {
+  font-size: 1.5em;
+}
+
+.slide p {
+  line-height: 1.25em;
+}
+
+.slide ul {
+  list-style-type: none;
+}
+
+.slide > ul {
+  margin-left: 2em;
+}
+
+.slide li {
+  margin-bottom: .25em;
+}
+
+.no-touch .slide-touch {
+  display: none;
+}
+
+.touch .slide-no-touch {
+  display: none;
+}
+
+@media screen and (max-device-width: 480px) {
+  .slide {
+    height: auto;
+    font-size: 100%;
+    min-height: auto;
+  }
+
+  .slide-view-module {
+    min-width: 0;
+    min-height: 0;
+  }
+
+  footer {
+    margin-top: 2em;
+    min-width: 0;
+    font-size: .75em;
+  }
+}
+
+@media screen and (max-device-width: 480px) and (orientation: landscape) {
+  footer {
+    font-size: .4em;
+  }
+}
+
+.slide p {
+  color: #222;
+  margin-left: 2em;
+}
+
+.slide em {
+  font-style: normal;
+  color: #888;
+}
+
+.slide ul > ul {
+  font-size: 90%;
+}
+
+/** sligthly smaller link in list **/
+.slide ul a { font-size: 0.8em; }
+
+.slide li {
+  line-height: 1em;
+  margin-bottom: .75em;
+}
+
+.slide .slide-layout-title {
+  padding-top: 2em;
+}
+
+@media screen and (max-device-width: 480px) {
+  .slide-view-module {
+    margin-top: 2em;
+  }
+
+  .slide {
+    font-size: 90%;
+  }
+
+  .slide .slide-layout-title {
+    padding-top: 0;
+  }
+
+  .slide p {
+    font-size: 1.25em;
+    margin-left: .25em;
+  }
+
+  .slide h2 {
+    margin-left: .25em;
+  }
+
+  .slide li {
+    font-size: 1.25em;
+  }
+
+}
+
+
+pre {
+	width: 600px;
+	margin: 0 100px;
+	font-size: 90%;
+}
+
+
+/*
+
+Google Code style (c) Aahan Krish <geekpanth3r@gmail.com>
+
+*/
+
+pre code {
+  display: block; padding: 0.5em;
+  background: white; color: black;
+  font-family: "Inconsolata";
+}
+
+pre .comment,
+pre .template_comment,
+pre .javadoc,
+pre .comment * {
+  color: #800;
+}
+
+pre .keyword,
+pre .method,
+pre .list .title,
+pre .nginx .title,
+pre .tag .title,
+pre .setting .value,
+pre .winutils,
+pre .tex .command,
+pre .http .title,
+pre .request,
+pre .status {
+  color: #008;
+}
+
+pre .envvar,
+pre .tex .special {
+  color: #660;
+}
+
+pre .string,
+pre .tag .value,
+pre .cdata,
+pre .filter .argument,
+pre .attr_selector,
+pre .apache .cbracket,
+pre .date,
+pre .regexp {
+  color: #080;
+}
+
+pre .sub .identifier,
+pre .pi,
+pre .tag,
+pre .tag .keyword,
+pre .decorator,
+pre .ini .title,
+pre .shebang,
+pre .input_number,
+pre .hexcolor,
+pre .rules .value,
+pre .css .value .number,
+pre .literal,
+pre .symbol,
+pre .ruby .symbol .string,
+pre .ruby .symbol .keyword,
+pre .ruby .symbol .keymethods,
+pre .number,
+pre .css .function {
+  color: #066;
+}
+
+pre .class .title,
+pre .haskell .type,
+pre .smalltalk .class,
+pre .javadoctag,
+pre .yardoctag,
+pre .phpdoc,
+pre .typename,
+pre .tag .attribute,
+pre .doctype,
+pre .class .id,
+pre .built_in,
+pre .setting,
+pre .params,
+pre .variable {
+  color: #606;
+}
+
+pre .css .tag,
+pre .rules .property,
+pre .pseudo,
+pre .subst {
+  color: #000;
+}
+
+pre .css .class, pre .css .id {
+  color: #9B703F;
+}
+
+pre .value .important {
+  color: #ff7700;
+  font-weight: bold;
+}
+
+pre .rules .keyword {
+  color: #C5AF75;
+}
+
+pre .annotation,
+pre .apache .sqbracket,
+pre .nginx .built_in {
+  color: #9B859D;
+}
+
+pre .preprocessor,
+pre .preprocessor * {
+  color: #444;
+}
+
+pre .tex .formula {
+  background-color: #EEE;
+  font-style: italic;
+}
+
+pre .diff .header,
+pre .chunk {
+  color: #808080;
+  font-weight: bold;
+}
+
+pre .diff .change {
+  background-color: #BCCFF9;
+}
+
+pre .addition {
+  background-color: #BAEEBA;
+}
+
+pre .deletion {
+  background-color: #FFC8BD;
+}
+
+pre .comment .yardoctag {
+  font-weight: bold;
+}
+
+
+blockquote {
+  border-left: 2px solid #ccc;
+  padding-left: 2em;
+}
+
+#impress blockquote p {
+  color: #777;
+}
+
+#impress #step-7 pre code {
+  font-size: 0.5em;
+}
+
+#impress #step-11 pre code {
+  font-size: 0.5em;
+}
+
+    </style>
+</head>
+
+<body class="impress-not-supported">
+<div class="fallback-message">
+  <p>Your browser <b>doesn't support the features required</b> by impress.js, so you are presented with a simplified version of this presentation.</p>
+  <p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.</p>
+</div>
+
+<!--
+
+Impress.js documentation, based on https://github.com/bartaz/impress.js/blob/master/index.html
+---------------------------------------------------------------------------------------------
+
+The `id` attribute of the step element is used to identify it in the URL, but it's optional.
+If it is not defined, it will get a default value of `step-N` where N is a number of slide.
+
+So to make a summary of all the possible attributes used to position presentation steps, we have:
+
+* `data-x`, `data-y`, `data-z`  they define the position of **the center** of step element on
+    the canvas in pixels; their default value is 0;
+* `data-rotate-x`, `data-rotate-y`, 'data-rotate-z`, `data-rotate` they define the rotation of
+    the element around given axis in degrees; their default value is 0; `data-rotate` and `data-rotate-z`
+    are exactly the same;
+* `data-scale` defines the scale of step element; default value is 1
+
+These values are used by impress.js in CSS transformation functions, so for more information consult
+CSS transfrom docs: https://developer.mozilla.org/en/CSS/transform
+
+The `impress()` function also gives you access to the API that controls the presentation.
+
+Just store the result of the call:
+
+    var api = impress();
+
+and you will get three functions you can call:
+
+    `api.init()` - initializes the presentation,
+    `api.next()` - moves to next step of the presentation,
+    `api.prev()` - moves to previous step of the presentation,
+    `api.goto( idx | id | element, [duration] )` - moves the presentation to the step given by its index number
+            id or the DOM element; second parameter can be used to define duration of the transition in ms,
+            but it's optional - if not provided default transition duration for the presentation will be used.
+
+You can also simply call `impress()` again to get the API, so `impress().next()` is also allowed.
+Don't worry, it wont initialize the presentation again.
+
+For some example uses of this API check the last part of the source of impress.js where the API
+is used in event handlers.
+
+specific to this plugin stuff
+-----------------------------
+
+if not defined, the attributes takes the following defaults
+
+* x= x+1000                     | 0
+* y=y                           | -1000
+* z=z                           | 0
+* rotate-x=rotate-x             | 0
+* rotate-y=rotate-y             | 0
+* rotate-z=rotate-z             | 0
+* scale=scale                   | 1
+
+-->
+
+<div id="impress">
+
+  
+  <section class="step slide" data-x="1" data-y="-1000" data-z="0" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="1">
+    <h1>Yeoman</h1>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+<script src="app.js"></script>
+
+<style>
+.slide {
+  overflow: hidden;
+  letter-spacing: 1px;
+}
+
+.slide ul {
+  list-style: circle inside;
+}
+
+.slide h1,
+.slide h2,
+.slide h3,
+.slide h4,
+.slide h5,
+.slide h6 {
+  font-family: &#39;Ubuntu Mono&#39;, sans-serif;
+  color: 555;
+}
+
+.slide img {
+  max-width: 100%;
+}
+
+.home {
+  background: url(i/yeomanlogo.png) no-repeat 550px 400px;
+}
+
+.slide ul p {
+  margin: 0;
+  padding: 0;
+}
+
+</style>
+
+<blockquote>
+<p><a href="http://yeoman.io">Modern workflow for modern webapps</a>
+
+</p>
+</blockquote>
+<ul style="margin-top: 60px;">
+  <li> WebApp Development Today
+  <li> Yeoman Introduction
+  <li> Project Activity
+  <li> Features
+  <li> Demo
+</ul>
+
+<p><span class="up-home"><span>
+
+</p>
+
+  </section>
+  
+  <section class="step slide" data-x="1051" data-y="-1000" data-z="0" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="1">
+    <h2>Web App development today</h2>
+
+  </section>
+  
+  <section class="step slide" data-x="2101" data-y="-1000" data-z="0" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="1">
+    <hr>
+<style>
+.tools {
+  background: url(i/choosingtools.jpg);
+}
+
+.bg {
+  background-size: 100% 100%;
+}
+
+.bg .fill,
+.bg blockquote {
+  background: hsl(0, 0%, 32%);
+  padding: 10px;
+}
+
+.bg .fill p,
+.bg blockquote,
+#impress .bg blockquote p {
+  color: white;
+}
+
+.bg .main {
+  color: white;
+  font-size: 40px;
+  padding: 12px;
+  margin: 0;
+}
+
+.bg .fill .sub,
+.bg blockquote .sub {
+  font-size: 25px;
+  color: gray;
+  display: block;
+}
+
+.bg blockquote {
+  border-left: none;
+}
+
+.timeline {
+  background-image: url(i/timeline.png);
+}
+
+.timeline .fill {
+  background: rgba(77, 77, 77, 0.6);
+  position: absolute;
+  bottom: 10%;
+  left: 20%;
+}
+
+.timeline .fill p {
+  color: #eee;
+}
+</style>
+
+<div class="fill">
+<p class="main">
+  Many Tools to choose from
+  <span class="sub">~ <a href="http://dl.dropbox.com/u/70775642/talks/tooling/fronteers/index.html#13">Addy Osmani</a></span>
+</p>
+</div>
+
+<p><span class="up-timeline"><span>
+<span class="up-bg"><span>
+
+</p>
+
+  </section>
+  
+  <section class="step slide" data-x="3151" data-y="-1000" data-z="0" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="1">
+    <hr>
+<div class="fill">
+<p class="main">
+  Craftsmanship is choosing tools well.
+  <span class="sub">
+    Difference between a developer that spends 45 minutes getting workflow setup for project and one that spends only 5.
+  </span>
+  ~ <a href="http://dl.dropbox.com/u/70775642/talks/tooling/fronteers/index.html#10">Addy Osmani</a>
+</p>
+</div>
+
+<p><span class="up-tools"></span>
+<span class="up-bg"></span>
+
+</p>
+
+  </section>
+  
+  <section class="step slide" data-x="4201" data-y="-1000" data-z="0" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="1">
+    <hr>
+<style>
+.baseline {
+  background-image: url(i/baseline-rebex.jpg);
+}
+
+.baseline blockquote {
+  position: absolute;
+  top: 40%;
+  left: 0;
+  background: rgba(77, 77, 77, 0.8);
+}
+</style>
+
+<blockquote>
+<p>We&#39;re seeing the emphasis shift from valuing trivia to valuing tools
+~<a href="http://rmurphey.com/blog/2012/04/12/a-baseline-for-front-end-developers/">Rebecca
+Murphey</a>
+
+</p>
+</blockquote>
+<p><span class="up-baseline"></span>
+<span class="up-bg"></span>
+
+</p>
+
+  </section>
+  
+  <section class="step slide" data-x="5251" data-y="-1000" data-z="0" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="1">
+    <h2>Introducing Yeoman</h2>
+<style>
+.yeoman img {
+  margin-top: 800px;
+  margin-left: 50px;
+
+  -webkit-transition: all 2s ease-out;
+     -moz-transition: all 2s ease-out;
+      -ms-transition: all 2s ease-out;
+       -o-transition: all 2s ease-out;
+          transition: all 2s ease-out;
+
+}
+
+.team p {
+  margin-top: 600px;
+  margin-left: 50px;
+  opacity: 0;
+
+  -webkit-transition: all 0.3s ease-out;
+     -moz-transition: all 0.3s ease-out;
+      -ms-transition: all 0.3s ease-out;
+       -o-transition: all 0.3s ease-out;
+          transition: all 0.3s ease-out;
+}
+
+.team.me p {
+  -webkit-transition-duration: 1s;
+     -moz-transition-duration: 1s;
+      -ms-transition-duration: 1s;
+       -o-transition-duration: 1s;
+          transition-duration: 1s;
+}
+
+.yeoman.present img {
+  margin-top: 280px;
+}
+
+.team.present p {
+  margin-top: 150px;
+  opacity: 1;
+}
+</style>
+
+<p><img src="i/yeomanlogo.png" alt="yeo">
+
+</p>
+<p><span class="up-yeoman"></span>
+
+</p>
+
+  </section>
+  
+  <section class="step slide" data-x="6301" data-y="-1000" data-z="0" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="1">
+    <hr>
+<p style="text-align: center;">
+<img src="i/paul.png" alt="Paul Irish">
+</p>
+
+<p><span class="up-team"></span>
+
+</p>
+
+  </section>
+  
+  <section class="step slide" data-x="7351" data-y="-1000" data-z="0" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="1">
+    <hr>
+<p style="text-align: center;">
+<img src="i/addy.png" alt="Addy Osmani">
+</p>
+
+<p><span class="up-team"></span>
+
+</p>
+
+  </section>
+  
+  <section class="step slide" data-x="8401" data-y="-1000" data-z="0" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="1">
+    <hr>
+<p style="text-align: center;">
+<img src="i/eric.png" alt="Eric Bidelman">
+</p>
+
+<p><span class="up-team"></span>
+
+</p>
+
+  </section>
+  
+  <section class="step slide" data-x="9451" data-y="-1000" data-z="0" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="1">
+    <hr>
+<p style="text-align: center;">
+<img src="i/sindre.png" alt="Sindre Sorhus">
+</p>
+
+<p><span class="up-team"></span>
+
+</p>
+
+  </section>
+  
+  <section class="step slide" data-x="10501" data-y="-1000" data-z="0" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="1">
+    <hr>
+<p style="text-align: center;">
+<em style="display: block;">... and me...</em>
+</p>
+
+<p><span class="up-team"></span>
+<span class="up-me"></span>
+
+</p>
+
+  </section>
+  
+  <section class="step slide" data-x="11551" data-y="-1000" data-z="0" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="1">
+    <h2>Project activity</h2>
+<style>
+.graphs {
+  background: url(i/m-graphs.png) no-repeat 0 100px;
+}
+
+.graphs .fill {
+  background: rgba(77, 77, 77, 0.9);
+  color: white;
+}
+
+.graphs .fill .sub {
+  color: #fff;
+}
+
+.graphs .fill a {
+  color: #fff;
+}
+</style>
+
+<div class="fill" style="margin-top: 100px;">
+<p class="sub">This is where we show the numbers! (and beautiful graphs :p)</p>
+
+<ul>
+  <li><a href="https://github.com/yeoman/yeoman/graphs">https://github.com/yeoman/yeoman/graphs</a>
+</ul>
+
+</div>
+
+<p><span class="up-graphs"></span>
+<span class="up-bg"></span>
+
+</p>
+
+  </section>
+  
+  <section class="step slide" data-x="12601" data-y="-1000" data-z="0" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="1">
+    <h3>Commit activity</h3>
+<p><a href="https://github.com/yeoman/yeoman/graphs/commit-activity">https://github.com/yeoman/yeoman/graphs/commit-activity</a>
+
+</p>
+<p style="text-align: center; margin: 150px 0 0 -10px;">
+<img src="i/m-week-history.png" alt="Week history">
+</p>
+
+
+  </section>
+  
+  <section class="step slide" data-x="13651" data-y="-1000" data-z="0" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="1">
+    <h3>Code Frequency</h3>
+<p><a href="https://github.com/yeoman/yeoman/graphs/code-frequency">https://github.com/yeoman/yeoman/graphs/code-frequency</a>
+
+</p>
+<p><img src="i/m-code-freq.png" alt="Code frequency">
+
+</p>
+
+  </section>
+  
+  <section class="step slide" data-x="14701" data-y="-1000" data-z="0" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="1">
+    <h3>Punch Card</h3>
+<p><a href="https://github.com/yeoman/yeoman/graphs/punch-card">https://github.com/yeoman/yeoman/graphs/punch-card</a>
+
+</p>
+<p><img src="i/m-punc-card.png" alt="Week history">
+
+</p>
+
+  </section>
+  
+  <section class="step slide" data-x="15751" data-y="-1000" data-z="0" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="1">
+    <h2>My implication</h2>
+<ul>
+<li>bla</li>
+<li>bla</li>
+<li>bla</li>
+</ul>
+
+  </section>
+  
+  <section class="step slide" data-x="16801" data-y="-1000" data-z="0" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="1">
+    <h2>Commits</h2>
+<p><img src="i/m-commits.png" alt="Comits">
+
+</p>
+
+  </section>
+  
+  <section class="step slide" data-x="17851" data-y="-1000" data-z="0" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="1">
+    <h2>Commit log</h2>
+<p><code>git contrib self</code>
+
+</p>
+<p>Mickael Daniel (176):
+      Add <code>--noprompt</code> option for init task to bypass all the prompts
+      Slight changes to the cli tests
+      Rework the test helpers to setup the .test dir before each tests
+      Tests for the build:<em> tasks (and default one)
+      Css task - do the minification once inline imports are done
+      Tests for the css task
+      Tests for the html task
+      Tests for the img task
+      Tests for the tar task
+      Usemin task - Rework the task to also do the replacement in stylesheets
+      Tests for the usemin task
+      Tidy up the cli test/fixtures files
+      Remove old init task and related files, now using yeoman init template
+      Change default init template to yeoman&#39;s, when yeoman init is run
+      Add a new init template, with remotes/</em> project repo handler
+      npm i grunt-jasmine-task -S
+      Load jasmine task from our node<em>modules
+      Add jasmine 1.2.0 files to be copied during init task
+      Add the according Jasmine runner and environment
+      init - Minor fix to the Gruntfile template
+      test - update fixtures, make sure to merge defaults
+      Rework the server task to be livereload compatible
+      init - tweaks to defaults template and remotes to bypass during tests
+      test - increase mocha timeout (mostly for first run / remote fetch)
+      bin - bypass insight prompt when run as test
+      test - update init assertions to catch up with the new init structure
+      test - fix img test, add expected .gitignore file for img dir
+      test - fix css test, check against main.css, update expected file
+      test - fix usemin test, update revision of files for expected fixtures
+      A start on this generator idea, really rails inspired.
+      Initial internal plumbing for loading in and starting generators
+      Add a bit of Grunt API available in generators, and a first controller
+      Add argument API for generators, creates an attribute getter for it.
+      Add a NamedBased generator to extend from
+      Further work on the generator API, ensure source / dest path
+      yeoman application generator stub
+      Initial support of hook mechanism for generators (basic)
+      sass generators, copying compass_twitter_bootstrap to destination
+      Generator API for directory copy, add generator app hooks
+      shorter directory copy src / dest dance
+      Make sure to prevent generator from running on missing argument
+      Show help on missing required argument, USAGE file if any
+      Also show help if --help was specifically passed
+      Fixup the description and generator name for default desc
+      Help output and list available generators
+      Merge branch &#39;master&#39; of github.com:yeoman/yeoman into generators
+      Add <code>new</code> command. Shortcut for yeoman generate app
+      Keep track of loaded path to print them when no generator were found
+      Process each files during directory copy as </em> template
+      warn user if they miss yeoman installed locally
+      Also expand to hidden files during directory copy
+      Add a Generator Generator.. :)
+      Add a js-framework hook, prevent loading of name only
+      Bootstrap generator
+      Load in generators from a yeoman-<em> npm module
+      Merge remote-tracking branch &#39;upstream/master&#39; into generators
+      Few tweaks: bootstrap usage file, load for name only when no lookups
+      Fix help output and generator list generators loaded twice
+      Add <code>g</code> as an alias to <code>generate</code>
+      A start on ember generators, bootstrap and view are functional
+      Slightly better log output, file write and invoke at least
+      Do the verbose flag switch at grunt.file.write level
+      Few doc updates
+      Better log output
+      Removed handlebars generator, might readd if we hookFor &quot;template-engine&quot;
+      Support <code>as</code> option on hookFor
+      Renamed bootstrpa generator to js, and moved up to yeoman&#39;s dir
+      Finish up the ember.js generators (mostly inspired from ember-rails)
+      hook for js-framework in app generator
+      Add the jasmine generator to setup the test/ directory
+      Mocha app generator
+      Missing lib/ prefix on assetion library in mocha templates
+      deps: Add grunt-mocha
+      Mocha generator - fix the runner in headless env, new api.
+      Add a basic suite (to be replace by app specs) to the generated mocha env
+      Have the generated app Gruntfile to atcually use the test-framework property
+      Coffee support for generators
+      Merge remote-tracking branch &#39;upstream/master&#39; into generators
+      Merge remote-tracking branch &#39;upstream/master&#39; into generators-coffee
+      Update paths to match the new file structure
+      Minor updates to generated gruntfile, comments.
+      App generator index.html file, basic copy.
+      Fixing the use of new thing/, cleaning name and reworked arguments a bit
+      Fix index.html copy location (must be below app/)
+      First work on usemin-handler based off necolas idea / initial work
+      Trigger the reving of files on usemin-handler
+      Trigger rjs:optimizer on data-main with usemin-handler
+      Add sample file for usemin-handler tests
+      Add desc method, and usage / description with help output
+      Hide mocha:app and few tweaks to lookup paths
+      App generator - clean trailing slash only when name provided
+      Add option method and better help output based on arguments / options
+      Update ember generators USAGE files and array option
+      General options in Base constructor via option method
+      Changed the way hookFor invokes other controller, must be used in ctor
+      Follow up hooks and output their options with help
+      Dasherize mocha generator options
+      First batch of doc updates for generators
+      Generate manpages via ronnjs, add a doc/ dir and generated man/ folder
+      Merge branch &#39;generators-coffee&#39; into generators
+      Get back to js for app generator
+      Async handler for generators (and hooks). Use this.async()
+      Added new generator methods: tarball, fetch and remote
+      Merge remote-tracking branch &#39;upstream/master&#39; into generators
+      generators - fixing the undefined config when &quot;hooked&quot; for
+      generators - hookFor must be used within the constructor only
+      init - delegate the groundwork of scaffolding to the generator layer
+      generators - add helper, prompt, promptFor, promptForObj API
+      generators - few fix / tweaks
+      Merge remote-tracking branch &#39;upstream/master&#39; into generators-test
+      generators - Initial tests for generators
+      generators - test for generators, 76 tests with 69 pendings..
+      generators - init / invoke should return the specified generator all the way through
+      generators - generators.prepare/init tests. init still has some pendings
+      deps - remove reference to ncp
+      deps - remove direct references to underscore, use grunt.util.<em>
+      deps - remove direct references to async, use grunt.util.async
+      generators - minox fix in simpleapp gen with async handler, and </em>.humanize
+      deps - match connect / prompt deps to the exact same version than grunt&#39;s deps
+      Merge remote-tracking branch &#39;upstream/master&#39; into dep-tree
+      tasks - server, minor change to instanceof check
+      test - initial work on the test refactoring
+      test - Add a Runnable object helper to help with cli prompts / output asserts
+      generators - Minor changes to wiring.js
+      generators - wiring: API to generate attributes from hash options
+      generators - Minor changes to simpleapp generated index.html file
+      generators - simpleapp rjs fetch,  change to rjs config
+      tasks - cleanup build targets a bit and slightly change inspect helper
+      tasks - move tasks/h5bp.js -&gt; tasks/yeoman.js
+      tasks - html, minor changes to match new inspect helper api
+      tasks - rjs changes to allow name / out config, rm sandbox for paths
+      tasks - usemin-handler, log blocks &amp; config, tweaks to amd match
+      test - allow multiple expectations with runnable helper
+      tasks - updates manifest / server task &amp; helpers
+      tasks - print the list of task to run in build task
+      test - test most of the expected stdout result for the build task
+      test - cleanup the test/ directory
+      minor changes to conform to code style
+      test - runnable, also attach stderr or stdout to errors raised
+      tasks - bower, reworked the task to use bower programmatically
+      package.json - force engine to 0.8.0 and above
+      deps - switch bower deps to npm
+      generators - change bower.dir to app/js/vendor in simpleapp Gruntfile
+      test - slighly more global regexp on expected prompt and rjs output
+      test - remove --silent flag from npm test
+      manifest - force path.resolving of path to avoid Forbidden error
+      manifest - better test expectation for the manifest task
+      generators - move defaulting logic for simpleapp to grunt template layer
+      generators - ability to warnOn at runtime, per generator
+      test - generators actions
+      test - generators base
+      test - udpate globals and remove $ as implied
+      jshint - minor changes in bower / manifest tasks for unused variables
+      server - slight changes to server task to also serve files from temp/
+      server - change target prod -&gt; dist
+      server - setup some error handling, per target basis if needed
+      build - slight change in tasks ordering, clean coffee compass mkdirs ...
+      server - add a new &quot;reload&quot; task, prevent browser opening and force port to 35729
+      test - make them pass
+      Fix tests - make them work without PhantomJS and Compass
+      tests - remove generators tests, now in their own repo
+      test - replace stdout checks and test against the file system
+      Make sure it pass with env without compass installed
+      test - add tests for bower task
+      test - add implied globals from es6-collection
+      test - add implied globals from cheerio
+      test - add tests asserting path dependant configuration values
+      misc - get rid of yeoman.utils
+      config - Add initial bits of config logic, based on config-chain
+      config - add defaults and process config keys as a template if necessary
+      config - pass config snapshot as generators options
+      generator - wrap init into try / catch, ensure exists on error
+      manifest - use phantomjs helper instead of spawn
+      config - updates to rjs task and proper config init on build
+      server - updates to pull path values from config
+      server - pass server:</em> target to internal yeoman-server:*
+
+</p>
+
+  </section>
+  
+  <section class="step slide" data-x="18901" data-y="-1000" data-z="0" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="1">
+    <h2>Pull Requests</h2>
+<p><img src="i/m-pr.png" alt="List of Closed Pull Request">
+
+</p>
+
+  </section>
+  
+  <section class="step slide" data-x="19951" data-y="-1000" data-z="0" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="1">
+    <hr>
+<p style="text-align: center;">
+<img src="i/m-moar-pr.png" style="max-height: 100%" />
+<span class="wheel" style="font-size: 5em; color: #222;">Moar!</span>
+</p>
+
+
+  </section>
+  
+  <section class="step slide" data-x="21001" data-y="-1000" data-z="0" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="1">
+    <h2>Launch</h2>
+<p><em>September 10, 2012</em>
+
+</p>
+<p><img src="i/yeoman-io.png" alt="yeoman.io">
+
+</p>
+
+  </section>
+  
+  <section class="step slide" data-x="22051" data-y="-1000" data-z="0" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="1">
+    <h2>GitHub</h2>
+<p><a href="https://github.com/yeoman"><img src="i/org.png" alt="Org"></a>
+
+</p>
+
+  </section>
+  
+  <section class="step slide" data-x="23101" data-y="-1000" data-z="0" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="1">
+    <h2>Gplus</h2>
+<p style="text-align: center; margin-top: 100px;">
+<a href="https://plus.google.com/101063139999404044459/posts"><img src="i/yeoman-gplus.png" alt="Gplus"></a>
+</p>
+
+
+  </section>
+  
+  <section class="step slide" data-x="24151" data-y="-1000" data-z="0" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="1">
+    <h2>Twitter</h2>
+<p style="text-align: center; margin-top: 180px;">
+<a href="http://twitter.com/yeoman"><img src="i/yeoman-twitter.png" alt="Twitter"></a>
+</p>
+
+
+  </section>
+  
+  <section class="step slide" data-x="25201" data-y="-1000" data-z="0" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="1">
+    <h2>What is Yeoman</h2>
+<blockquote>
+<p>The Yeoman CLI presents a command-line interface for creating, building, maintaining, and shipping a project.
+
+</p>
+</blockquote>
+<p><em>Abstraction on top of</em>
+
+</p>
+<ul style="margin-top: 60px;">
+  <li>a package manager (<a href="http://twitter.github.com/bower/">Bower</a>)
+  <li>a build tool (<a href="http://gruntjs.com/">grunt</a>)
+  <li>a scaffolding system (<a href="https://github.com/yeoman/generators">yeoman-generators</a>)
+  <li>and a built-in <a href="http://livereload.com/">LiveReload</a> compatible server
+</ul>
+
+
+  </section>
+  
+  <section class="step slide" data-x="26251" data-y="-1000" data-z="0" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="1">
+    <h2>Bower</h2>
+<blockquote>
+<p>Bower is a package manager for the web. Bower lets you easily install assets
+such as images, CSS and JavaScript, and manages dependencies for you.
+
+</p>
+</blockquote>
+<p><img src="i/bower.png" alt="bower">
+
+</p>
+
+  </section>
+  
+  <section class="step slide" data-x="27301" data-y="-1000" data-z="0" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="1">
+    <h2>Grunt</h2>
+<p><img src="i/grunt2.png" alt="gruntjs">
+
+</p>
+
+  </section>
+  
+  <section class="step slide" data-x="28351" data-y="-1000" data-z="0" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="1">
+    <h2>Yeoman Generators</h2>
+<p style="text-align: center;">
+<img src="i/gen-1.png" style="max-width: none; max-height: 100%;"/>
+</p>
+
+
+  </section>
+  
+  <section class="step slide" data-x="29401" data-y="-1000" data-z="0" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="1">
+    <hr>
+<p style="text-align: center;">
+<img src="i/gen-2.png" style="max-width: none; max-height: 100%;"/>
+</p>
+
+
+  </section>
+  
+  <section class="step slide" data-x="30451" data-y="-1000" data-z="0" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="1">
+    <h2>LiveReload</h2>
+<p style="text-align: center;">
+<img src="i/lr-head.png" style="max-width: none; max-height: 100%; margin: 35px 0 0 -85px"/>
+</p>
+
+
+  </section>
+  
+  <section class="step slide" data-x="31501" data-y="-1000" data-z="0" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="1">
+    <hr>
+<blockquote>
+<p>We think you should go from idea to rough prototype in 10 min
+
+</p>
+</blockquote>
+<p><img src="i/wotcha.png" alt="Wotcha">
+
+</p>
+
+  </section>
+  
+  <section class="step slide" data-x="32551" data-y="-1000" data-z="0" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="1">
+    <h2>Yeoman</h2>
+<ul>
+<li>Limit the time spent on writing boilerplate for your app.</li>
+<li>Automate as much of your workflow as possible</li>
+<li>Reduce friction for the things you should be doing, like testing.</li>
+</ul>
+<p><span class="up-home"></span>
+
+</p>
+
+  </section>
+  
+  <section class="step slide" data-x="33601" data-y="-1000" data-z="0" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="1">
+    <hr>
+<style>
+.hat-tip img {
+  float: right;
+}
+</style>
+
+<p>Yeoman is an open source set of tools to accelerate building compelling webapps.
+
+</p>
+<ul>
+<li>Seamless integration of successful open source projects</li>
+<li>Authoring abstractions, linting, testing, build tools, generators</li>
+<li>Smooth developer ergonomics</li>
+</ul>
+<p><img src="i/hat-tip.png" alt="Hat">
+
+</p>
+<p><span class="up-hat-tip"></span>
+
+</p>
+
+  </section>
+  
+  <section class="step slide" data-x="34651" data-y="-1000" data-z="0" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="1">
+    <h2>Directory Structure</h2>
+<style>
+.tree pre code {
+  font-size: 0.5em;
+  font-family: Open Sans, sans serif;
+  line-height: 2em;
+  margin-left: 30%;
+}
+</style>
+
+<pre><code>
+.
+├── package.json
+├── Gruntfile.js
+├── app
+│   ├── 404.html
+│   ├── favicon.ico
+│   ├── images
+│   ├── index.html
+│   ├── robots.txt
+│   ├── scripts
+│   ├── components
+│   ├── styles
+│   └── templates
+├── dist
+├── temp
+└── test
+    ├── index.html
+    ├── lib
+    ├── runner
+    └── spec
+</code></pre>
+
+<p><span class="up-tree"></span>
+
+</p>
+
+  </section>
+  
+  <section class="step slide" data-x="35701" data-y="-1000" data-z="0" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="1">
+    <h2>Build Tool</h2>
+<p>Built on top of Grunt
+
+</p>
+<ul>
+<li><a href="http://gruntjs.com">http://gruntjs.com</a></li>
+</ul>
+<p><img src="i/grunt2.png" alt="gruntjs">
+
+</p>
+
+  </section>
+  
+  <section class="step slide" data-x="36751" data-y="-1000" data-z="0" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="1">
+    <h2>Support is included for</h2>
+<ul>
+<li><p><strong>Abstractions</strong></p>
+<ul>
+<li>Compass. Sass. Coffeescript.</li>
+</ul>
+</li>
+<li><p><strong>Modules</strong></p>
+<ul>
+<li>AMD + RequireJS. Experimental support for ES6 module syntax</li>
+</ul>
+</li>
+<li><p><strong>Boilerplates</strong></p>
+<ul>
+<li>Twitter Bootstrap.</li>
+<li>HTML5 Boilerplate + Modernizr.</li>
+</ul>
+</li>
+<li><p><strong>Testing &amp; Build Process</strong></p>
+<ul>
+<li>Mocha. Jasmine. PhantomJS.</li>
+<li>r.js. OptiPNG. jpegtran.</li>
+</ul>
+</li>
+</ul>
+
+  </section>
+  
+  <section class="step slide" data-x="37801" data-y="-1000" data-z="0" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="1">
+    <h2>Package Management</h2>
+<p>Built on top of Bower
+
+</p>
+<ul>
+<li><a href="http://twitter.github.com/bower/">http://twitter.github.com/bower/</a></li>
+</ul>
+<p><img src="i/bower.png" alt="bower">
+
+</p>
+
+  </section>
+  
+  <section class="step slide" data-x="38851" data-y="-1000" data-z="0" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="1">
+    <h2>How do you update your dependent libraries?</h2>
+<ul>
+<li>You read they are out of date</li>
+<li>Open site</li>
+<li>Find download</li>
+<li>Download to ~/Downloads</li>
+<li>Move to app folder</li>
+<li>Wire in with script tags, etc</li>
+</ul>
+
+  </section>
+  
+  <section class="step slide" data-x="39901" data-y="-1000" data-z="0" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="1">
+    <h2>Why do we need package management?</h2>
+<ul>
+<li>Clientside dependencies are a chore</li>
+<li>Common code duplicated</li>
+<li>Library fragmentation and disjoint communities</li>
+</ul>
+
+  </section>
+  
+  <section class="step slide" data-x="40951" data-y="-1000" data-z="0" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="1">
+    <h2>Package management solutions</h2>
+<ul>
+<li>allowing longer dependency chains</li>
+<li>structured dependencies for smart build systems</li>
+<li>as a library author, easier for your users, both regular install and install as a dependency</li>
+</ul>
+<p>How about...
+
+</p>
+<pre><code><span class="title">yeoman</span> install backbone
+<span class="title">yeoman</span> install backbone.localStorage</code></pre>
+
+  </section>
+  
+  <section class="step slide" data-x="42001" data-y="-1000" data-z="0" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="1">
+    <h2>How do you update your dependent libraries?</h2>
+<blockquote>
+<p>yeoman update backbone
+
+</p>
+</blockquote>
+
+  </section>
+  
+  <section class="step slide" data-x="43051" data-y="-1000" data-z="0" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="1">
+    <h2>Generators</h2>
+<p>Inspired by Rails3 Generators.
+
+</p>
+<p style="text-align: center;">
+<img src="i/gen-1.png" style="max-width: none; max-height: 100%;"/>
+</p>
+
+
+  </section>
+  
+  <section class="step slide" data-x="44101" data-y="-1000" data-z="0" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="1">
+    <h2>Generators</h2>
+<ul>
+<li><p>We&#39;re including a bunch of generators out of the box to get you started.</p>
+</li>
+<li><p>Generators can be written for any framework or workflow</p>
+</li>
+<li>They&#39;re highly customizable. Our API supports:<ul>
+<li>Remotely pulling and filtering dependencies</li>
+<li>Wiring, so boilerplate minimization++</li>
+<li>Sub-generators for creating new models, views etc.
+and tons more!</li>
+</ul>
+</li>
+</ul>
+
+  </section>
+  
+  <section class="step slide" data-x="45151" data-y="-1000" data-z="0" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="1">
+    <hr>
+<p style="text-align: center;">
+<img src="i/gen-2.png" style="max-width: none; max-height: 100%;"/>
+</p>
+
+
+  </section>
+  
+  <section class="step slide" data-x="46201" data-y="-1000" data-z="0" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="1">
+    <h2>Some of our generators</h2>
+
+  </section>
+  
+  <section class="step slide" data-x="47251" data-y="-1000" data-z="0" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="1">
+    <h2>Angular</h2>
+<ul>
+<li>Angular<ul>
+<li>angular:all</li>
+<li>angular:app</li>
+<li>angular:common</li>
+<li>angular:controller</li>
+<li>angular:directive</li>
+<li>angular:filter</li>
+<li>angular:route</li>
+<li>angular:service</li>
+<li>angular:view</li>
+</ul>
+</li>
+</ul>
+
+  </section>
+  
+  <section class="step slide" data-x="48301" data-y="-1000" data-z="0" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="1">
+    <h2>Backbone</h2>
+<ul>
+<li><p>Backbone</p>
+<ul>
+<li>backbone:all</li>
+<li>backbone:app</li>
+<li>backbone:collection</li>
+<li>backbone:model</li>
+<li>backbone:router</li>
+<li>backbone:view</li>
+</ul>
+</li>
+<li><p>Bbb</p>
+<ul>
+<li>bbb:all</li>
+</ul>
+</li>
+</ul>
+
+  </section>
+  
+  <section class="step slide" data-x="49351" data-y="-1000" data-z="0" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="1">
+    <h2>Chromeapp</h2>
+<ul>
+<li>Chomeapp<ul>
+<li>chromeapp:all</li>
+</ul>
+</li>
+</ul>
+
+  </section>
+  
+  <section class="step slide" data-x="50401" data-y="-1000" data-z="0" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="1">
+    <h2>Ember-starter</h2>
+<ul>
+<li><p>Ember-starter</p>
+<ul>
+<li>ember-starter:all</li>
+</ul>
+</li>
+<li><p>Ember</p>
+<ul>
+<li>ember:all</li>
+<li>ember:app</li>
+<li>ember:controller</li>
+<li>ember:model</li>
+<li>ember:view</li>
+</ul>
+</li>
+</ul>
+
+  </section>
+  
+  <section class="step slide" data-x="51451" data-y="-1000" data-z="0" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="1">
+    <h2>Tests Framework</h2>
+<ul>
+<li><p>Mocha</p>
+<ul>
+<li>mocha:generator</li>
+</ul>
+</li>
+<li><p>Testacular</p>
+<ul>
+<li>testacular:app</li>
+</ul>
+</li>
+</ul>
+
+  </section>
+  
+  <section class="step slide" data-x="52501" data-y="-1000" data-z="0" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="1">
+    <h2>Coming Next</h2>
+<ul style="margin-top: 100px;">
+  <li> Ability to configure directory structure
+  <li> Better integration with existing Backend
+  <li> Better documentation
+  <li> Better support of MV* framework with our generators
+  <li> EVERYTHNG
+</ul>
+
+
+  </section>
+  
+  <section class="step slide" data-x="53551" data-y="-1000" data-z="0" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="1">
+    <hr>
+<p style="text-align: center; margin: 250px 0 0 0;">
+<em style="display: block;">... Demo? ...</em>
+</p>
+
+
+
+
+
+
+
+
+
+  </section>
+  ;
+
+</div>
+
+
+<script>
+/**
+ * impress.js
+ *
+ * impress.js is a presentation tool based on the power of CSS3 transforms and transitions
+ * in modern browsers and inspired by the idea behind prezi.com.
+ *
+ *
+ * Copyright 2011-2012 Bartek Szopka (@bartaz)
+ *
+ * Released under the MIT and GPL Licenses.
+ *
+ * ------------------------------------------------
+ *  author:  Bartek Szopka
+ *  version: 0.5.3
+ *  url:     http://bartaz.github.com/impress.js/
+ *  source:  http://github.com/bartaz/impress.js/
+ *//*jshint bitwise:true, curly:true, eqeqeq:true, forin:true, latedef:true, newcap:true,
+         noarg:true, noempty:true, undef:true, strict:true, browser:true */// You are one of those who like to know how thing work inside?
+// Let me show you the cogs that make impress.js run...
+(function(a,b){"use strict";var c=function(){var b=a.createElement("dummy").style,c="Webkit Moz O ms Khtml".split(" "),d={};return function(a){if(typeof d[a]=="undefined"){var e=a.charAt(0).toUpperCase()+a.substr(1),f=(a+" "+c.join(e+" ")+e).split(" ");d[a]=null;for(var g in f)if(b[f[g]]!==undefined){d[a]=f[g];break}}return d[a]}}(),d=function(a){return[].slice.call(a)},e=function(a,b){var d,e;for(d in b)b.hasOwnProperty(d)&&(e=c(d),e!==null&&(a.style[e]=b[d]));return a},f=function(a,b){return isNaN(a)?b||0:Number(a)},g=function(b){return a.getElementById(b)},h=function(b,c){return c=c||a,c.querySelector(b)},i=function(b,c){return c=c||a,d(c.querySelectorAll(b))},j=function(b,c,d){var e=a.createEvent("CustomEvent");e.initCustomEvent(c,!0,!0,d),b.dispatchEvent(e)},k=function(a){return" translate3d("+a.x+"px,"+a.y+"px,"+a.z+"px) "},l=function(a,b){var c=" rotateX("+a.x+"deg) ",d=" rotateY("+a.y+"deg) ",e=" rotateZ("+a.z+"deg) ";return b?e+d+c:c+d+e},m=function(a){return" scale("+a+") "},n=function(a){return" perspective("+a+"px) "},o=function(){return g(b.location.hash.replace(/^#\/?/,""))},p=function(a){var c=b.innerHeight/a.height,d=b.innerWidth/a.width,e=c>d?d:c;return a.maxScale&&e>a.maxScale&&(e=a.maxScale),a.minScale&&e<a.minScale&&(e=a.minScale),e},q=a.body,r=navigator.userAgent.toLowerCase(),s=c("perspective")!==null&&q.classList&&q.dataset&&r.search(/(iphone)|(ipod)|(android)/)===-1;s?(q.classList.remove("impress-not-supported"),q.classList.add("impress-supported")):q.className+=" impress-not-supported ";var t={},u={width:1024,height:768,maxScale:1,minScale:0,perspective:1e3,transitionDuration:1e3},v=function(){return!1},w=b.impress=function(c){if(!s)return{init:v,"goto":v,prev:v,next:v};c=c||"impress";if(t["impress-root-"+c])return t["impress-root-"+c];var r={},w=null,x=null,y=null,z=null,A=null,B=g(c),C=a.createElement("div"),D=!1,E=null,F=function(a){E!==a&&(j(a,"impress:stepenter"),E=a)},G=function(a){E===a&&(j(a,"impress:stepleave"),E=null)},H=function(a,b){var c=a.dataset,d={translate:{x:f(c.x),y:f(c.y),z:f(c.z)},rotate:{x:f(c.rotateX),y:f(c.rotateY),z:f(c.rotateZ||c.rotate)},scale:f(c.scale,1),el:a};a.id||(a.id="step-"+(b+1)),r["impress-"+a.id]=d,e(a,{position:"absolute",transform:"translate(-50%,-50%)"+k(d.translate)+l(d.rotate)+m(d.scale),transformStyle:"preserve-3d"})},I=function(){if(D)return;var b=h("meta[name='viewport']")||a.createElement("meta");b.content="width=device-width, minimum-scale=1, maximum-scale=1, user-scalable=no",b.parentNode!==a.head&&(b.name="viewport",a.head.appendChild(b));var g=B.dataset;z={width:f(g.width,u.width),height:f(g.height,u.height),maxScale:f(g.maxScale,u.maxScale),minScale:f(g.minScale,u.minScale),perspective:f(g.perspective,u.perspective),transitionDuration:f(g.transitionDuration,u.transitionDuration)},A=p(z),d(B.childNodes).forEach(function(a){C.appendChild(a)}),B.appendChild(C),a.documentElement.style.height="100%",e(q,{height:"100%",overflow:"hidden"});var k={position:"absolute",transformOrigin:"top left",transition:"all 0s ease-in-out",transformStyle:"preserve-3d"};e(B,k),e(B,{top:"50%",left:"50%",transform:n(z.perspective/A)+m(A)}),e(C,k),q.classList.remove("impress-disabled"),q.classList.add("impress-enabled"),y=i(".step",B),y.forEach(H),x={translate:{x:0,y:0,z:0},rotate:{x:0,y:0,z:0},scale:1},D=!0,j(B,"impress:init",{api:t["impress-root-"+c]})},J=function(a){return typeof a=="number"?a=a<0?y[y.length+a]:y[a]:typeof a=="string"&&(a=g(a)),a&&a.id&&r["impress-"+a.id]?a:null},K=null,L=function(a,c){if(!D||!(a=J(a)))return!1;b.scrollTo(0,0);var d=r["impress-"+a.id];w&&(w.classList.remove("active"),q.classList.remove("impress-on-"+w.id)),a.classList.add("active"),q.classList.add("impress-on-"+a.id);var g={rotate:{x:-d.rotate.x,y:-d.rotate.y,z:-d.rotate.z},translate:{x:-d.translate.x,y:-d.translate.y,z:-d.translate.z},scale:1/d.scale},h=g.scale>=x.scale;c=f(c,z.transitionDuration);var i=c/2;a===w&&(A=p(z));var j=g.scale*A;w&&w!==a&&G(w),e(B,{transform:n(z.perspective/j)+m(j),transitionDuration:c+"ms",transitionDelay:(h?i:0)+"ms"}),e(C,{transform:l(g.rotate,!0)+k(g.translate),transitionDuration:c+"ms",transitionDelay:(h?0:i)+"ms"});if(x.scale===g.scale||x.rotate.x===g.rotate.x&&x.rotate.y===g.rotate.y&&x.rotate.z===g.rotate.z&&x.translate.x===g.translate.x&&x.translate.y===g.translate.y&&x.translate.z===g.translate.z)i=0;return x=g,w=a,b.clearTimeout(K),K=b.setTimeout(function(){F(w)},c+i),a},M=function(){var a=y.indexOf(w)-1;return a=a>=0?y[a]:y[y.length-1],L(a)},N=function(){var a=y.indexOf(w)+1;return a=a<y.length?y[a]:y[0],L(a)};return B.addEventListener("impress:init",function(){y.forEach(function(a){a.classList.add("future")}),B.addEventListener("impress:stepenter",function(a){a.target.classList.remove("past"),a.target.classList.remove("future"),a.target.classList.add("present")},!1),B.addEventListener("impress:stepleave",function(a){a.target.classList.remove("present"),a.target.classList.add("past")},!1)},!1),B.addEventListener("impress:init",function(){var a="";B.addEventListener("impress:stepenter",function(c){b.location.hash=a="#/"+c.target.id},!1),b.addEventListener("hashchange",function(){b.location.hash!==a&&L(o())},!1),L(o()||y[0],0)},!1),q.classList.add("impress-disabled"),t["impress-root-"+c]={init:I,"goto":L,next:N,prev:M}};w.supported=s})(document,window),function(a,b){"use strict";var c=function(a,b){var c=null;return function(){var d=this,e=arguments;clearTimeout(c),c=setTimeout(function(){a.apply(d,e)},b)}};a.addEventListener("impress:init",function(d){var e=d.detail.api;a.addEventListener("keydown",function(a){(a.keyCode===9||a.keyCode>=32&&a.keyCode<=34||a.keyCode>=37&&a.keyCode<=40)&&a.preventDefault()},!1),a.addEventListener("keyup",function(a){if(a.keyCode===9||a.keyCode>=32&&a.keyCode<=34||a.keyCode>=37&&a.keyCode<=40){switch(a.keyCode){case 33:case 37:case 38:e.prev();break;case 9:case 32:case 34:case 39:case 40:e.next()}a.preventDefault()}},!1),a.addEventListener("click",function(b){var c=b.target;while(c.tagName!=="A"&&c!==a.documentElement)c=c.parentNode;if(c.tagName==="A"){var d=c.getAttribute("href");d&&d[0]==="#"&&(c=a.getElementById(d.slice(1)))}e.goto(c)&&(b.stopImmediatePropagation(),b.preventDefault())},!1),a.addEventListener("click",function(b){var c=b.target;while((!c.classList.contains("step")||!!c.classList.contains("active"))&&c!==a.documentElement)c=c.parentNode;e.goto(c)&&b.preventDefault()},!1),a.addEventListener("touchstart",function(a){if(a.touches.length===1){var c=a.touches[0].clientX,d=b.innerWidth*.3,f=null;c<d?f=e.prev():c>b.innerWidth-d&&(f=e.next()),f&&a.preventDefault()}},!1),b.addEventListener("resize",c(function(){e.goto(a.querySelector(".active"),500)},250),!1)},!1)}(document,window);
+</script>
+<script>impress().init()</script>
+</body>
+</html>
