@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Anotomy of a Yeoman application
+published: false
 ---
 
 ## The standard application layout
