@@ -18,7 +18,7 @@ templates?"
 I also wanted the generator to generate from a minimalist and efficient
 starting point for Jekyll. So, I started building the thing on
 [@necolas](https://github.com/necolas)'
-[jekyll](https://github.com/necolas/jekyll-boilerplate) project.
+[jekyll-boilerplate](https://github.com/necolas/jekyll-boilerplate) project.
 
 Here is what the result look like:
 
