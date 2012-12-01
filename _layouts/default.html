@@ -14,9 +14,13 @@
 <body>
   <div class="container">
     <div class="inner">
-      <header>
-        <h1><a href="{{ site.baseurl }}">{{ site.title }}</a></h1>
-        <h2>{{ site.tagline }}</h2>
+      <header class="header">
+        <h1 class="title">
+          <a href="{{ site.baseurl }}">
+            {{ site.title }}
+            <span class="tagline">{{ site.tagline }}</span>
+          </a>
+        </h1>
       </header>
 
       {% if downloads %}
