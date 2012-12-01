@@ -86,51 +86,49 @@ Pretty sweet right?
 
 The actual console output:
 
-{% highlight sh %}
 
-   invoke  jekyll
-   create    .gitignore
-   create    _config.yml
-   create    _includes/.gitignore
-   create    _layouts/default.html
-   create    _layouts/post.html
-   create    _posts/1970-01-01-placeholder-post.md
-   create    index.html
-   create    README.md
-    force    _layouts/default.html
-   create    stylesheets/print.css
-   create    stylesheets/pygment_trac.css
-   create    stylesheets/stylesheet.css
-   create    tactile.html
-   invoke      gruntfile:jekyll
+       invoke  jekyll
+       create    .gitignore
+       create    _config.yml
+       create    _includes/.gitignore
+       create    _layouts/default.html
+       create    _layouts/post.html
+       create    _posts/1970-01-01-placeholder-post.md
+       create    index.html
+       create    README.md
+        force    _layouts/default.html
+       create    stylesheets/print.css
+       create    stylesheets/pygment_trac.css
+       create    stylesheets/stylesheet.css
+       create    tactile.html
+       invoke      gruntfile:jekyll
 
-Scanning the directory structure...OK
+    Scanning the directory structure...OK
 
 
-Please answer the following:
- Directory - app (app)
- Directory - temp (temp)
- Directory - dist (dist)
- Directory - scripts (scripts)
- Directory - styles (stylesheets)
- Directory - vendor (scripts/vendor)
- Directory - images (images)
- Do you need to make any changes to the above before continuing? (y/N)
+    Please answer the following:
+     Directory - app (app)
+     Directory - temp (temp)
+     Directory - dist (dist)
+     Directory - scripts (scripts)
+     Directory - styles (stylesheets)
+     Directory - vendor (scripts/vendor)
+     Directory - images (images)
+     Do you need to make any changes to the above before continuing? (y/N)
 
-Writing local .yeomanrc file with following values: {
-  "app": "app",
-  "temp": "temp",
-  "dist": "dist",
-  "scripts": "scripts",
-  "styles": "stylesheets",
-  "vendor": "scripts/vendor",
-  "images": "images"
-}
+    Writing local .yeomanrc file with following values: {
+      "app": "app",
+      "temp": "temp",
+      "dist": "dist",
+      "scripts": "scripts",
+      "styles": "stylesheets",
+      "vendor": "scripts/vendor",
+      "images": "images"
+    }
 
-   create        .yeomanrc
-   create        Gruntfile.js
+       create        .yeomanrc
+       create        Gruntfile.js
 
-{% endhighlight %}
 
 
 Directories
@@ -193,89 +191,87 @@ should be a good candidate for that directory.
 This goes along the prompt of each directory value. Typing `?` on any questions
 asked will output more informations about this specific directory. Ex:
 
-{% highlight sh %}
- Directory - app (app) ?
-error:  Invalid input for Directory - app
-error:  The "app" directory is the most important directory, and is where your
-source files are located.
+     Directory - app (app) ?
+    error:  Invalid input for Directory - app
+    error:  The "app" directory is the most important directory, and is where your
+    source files are located.
 
-`scripts`, `styles` and `vendor` are all resolved relative to this directory.
+    `scripts`, `styles` and `vendor` are all resolved relative to this directory.
 
-A good place for that is simply `app/` (default value), but if you want the
-root of your repository to be the root of your application, you can choose to
-set this to `./`
+    A good place for that is simply `app/` (default value), but if you want the
+    root of your repository to be the root of your application, you can choose to
+    set this to `./`
 
-Defaults to `app/`.
+    Defaults to `app/`.
 
- Directory - temp (temp) ?
-error:  Invalid input for Directory - temp
-error:  The "temp" directory is used mostly with the build and server commands.
+     Directory - temp (temp) ?
+    error:  Invalid input for Directory - temp
+    error:  The "temp" directory is used mostly with the build and server commands.
 
-It acts as a mirror of your "app" directory, compile-ish steps like coffee,
-compass or even rjs should be configured to output in this directory.
+    It acts as a mirror of your "app" directory, compile-ish steps like coffee,
+    compass or even rjs should be configured to output in this directory.
 
-The server task when creating the HTTP server will use both directories to
-serve static files, from both locations. Order matters, and the "app" directory
-is usually configured prior to the "temp" one, meaning that the server will
-respond with the file in "app" when the same file appears in both direcory.
+    The server task when creating the HTTP server will use both directories to
+    serve static files, from both locations. Order matters, and the "app" directory
+    is usually configured prior to the "temp" one, meaning that the server will
+    respond with the file in "app" when the same file appears in both direcory.
 
-Additionally, this directory is used by the build task, to copy the files in
-the "app" dir and optimize files in that temporary directory.
+    Additionally, this directory is used by the build task, to copy the files in
+    the "app" dir and optimize files in that temporary directory.
 
-Defaults to `temp/`.
-
-
- Directory - dist (dist) ?
-error:  Invalid input for Directory - dist
-error:  The "dist" directory is only used at the end of the build task, simply copying
-the "temp" directory to the "dist" one.
-
-Defaults to `dist/`.
+    Defaults to `temp/`.
 
 
- Directory - scripts (scripts) ?
-error:  Invalid input for Directory - scripts
-error:  The "scripts" directory is resolved relative to the "app" one.
+     Directory - dist (dist) ?
+    error:  Invalid input for Directory - dist
+    error:  The "dist" directory is only used at the end of the build task, simply copying
+    the "temp" directory to the "dist" one.
 
-This is where the JavaScript files of your application are located.
-
-This path is used namely with the lint, coffee, and rjs task (every task that
-is looking up for JS sources)
-
-Defaults to `scripts/`.
+    Defaults to `dist/`.
 
 
- Directory - styles (stylesheets) ?
-error:  Invalid input for Directory - styles
-error:  The "styles" directory is resolved relative to the "app" one.
+     Directory - scripts (scripts) ?
+    error:  Invalid input for Directory - scripts
+    error:  The "scripts" directory is resolved relative to the "app" one.
 
-This is where the raw CSS of pre-processor files of your application are
-located.
+    This is where the JavaScript files of your application are located.
 
-Namely used with the compass.
+    This path is used namely with the lint, coffee, and rjs task (every task that
+    is looking up for JS sources)
 
-Defaults to `styles/`.
-
-We have detected the following directory as a good candidate: stylesheets
-Files:
- - stylesheets/print.css
- - stylesheets/pygment_trac.css
- - stylesheets/stylesheet.css
+    Defaults to `scripts/`.
 
 
- Directory - vendor (scripts/vendor) ?
-error:  Invalid input for Directory - vendor
-error:  The "vendor" directory is resolved relative to the "app" one.
+     Directory - styles (stylesheets) ?
+    error:  Invalid input for Directory - styles
+    error:  The "styles" directory is resolved relative to the "app" one.
 
-This is where the third-party JavaScript files of your application are located.
+    This is where the raw CSS of pre-processor files of your application are
+    located.
 
-Usually called scripts/vendor/ (defaults) or js/libs
+    Namely used with the compass.
 
-You should map the value of "scripts" directory with the value of "vendor", ex.
-scripts/ and scripts/vendor or js/ and js/libs.
+    Defaults to `styles/`.
 
-Defaults to `scripts/vendor`.
-{% endhighlight %}
+    We have detected the following directory as a good candidate: stylesheets
+    Files:
+     - stylesheets/print.css
+     - stylesheets/pygment_trac.css
+     - stylesheets/stylesheet.css
+
+
+     Directory - vendor (scripts/vendor) ?
+    error:  Invalid input for Directory - vendor
+    error:  The "vendor" directory is resolved relative to the "app" one.
+
+    This is where the third-party JavaScript files of your application are located.
+
+    Usually called scripts/vendor/ (defaults) or js/libs
+
+    You should map the value of "scripts" directory with the value of "vendor", ex.
+    scripts/ and scripts/vendor or js/ and js/libs.
+
+    Defaults to `scripts/vendor`.
 
 
 ## Commands
