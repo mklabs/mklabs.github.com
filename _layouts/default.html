@@ -10,6 +10,9 @@
   <link rel="stylesheet" href="{{ site.baseurl }}stylesheets/stylesheet.css">
   <link rel="stylesheet" href="{{ site.baseurl }}stylesheets/app.css">
 
+  <!-- Font Awesome - http://fortawesome.github.com/Font-Awesome -->
+  <link rel="stylesheet" href="{{ site.baseurl }}stylesheets/fontawesome/css/font-awesome.css">
+
 </head>
 <body>
   <div class="container">
@@ -21,6 +24,13 @@
             <span class="tagline">{{ site.tagline }}</span>
           </a>
         </h1>
+
+        <nav class="nav">
+          {{ page.tilte }}
+          <a href="/" class="{% if page.module == 'home' %}active{% endif %}"> Home</a>
+          <a href="https://github.com/mklabs" class=""> <i class="icon-github"></i> </a>
+          <a href="http://twitter.com/mklabs" class=""> <i class="icon-twitter"></i> </a>
+        </nav>
       </header>
 
       {% if downloads %}

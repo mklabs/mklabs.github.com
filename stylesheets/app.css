@@ -7,3 +7,28 @@
 body blockquote {
   font-size: 1em;
 }
+
+.nav i {
+  -webkit-transition: all 0.3s ease-out;
+     -moz-transition: all 0.3s ease-out;
+      -ms-transition: all 0.3s ease-out;
+       -o-transition: all 0.3s ease-out;
+          transition: all 0.3s ease-out;
+
+}
+
+.nav i:hover {
+  -webkit-transform: scale(1.8);
+     -moz-transform: scale(1.8);
+      -ms-transform: scale(1.8);
+       -o-transform: scale(1.8);
+          transform: scale(1.8);
+}
+
+.nav .icon-github:hover {
+  color: #444;
+}
+
+.nav .icon-twitter:hover {
+  color: #0084B4;
+}

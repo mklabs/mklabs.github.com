@@ -46,7 +46,29 @@ table {
   border-spacing: 0;
 }
 
-/* LAYOUT STYLES */
+/* navigation */
+
+.nav {
+  text-align: right;
+}
+
+.nav a {
+  margin: 0 5px;
+  padding-right: 15px;
+  border-right: 1px dotted #eee;
+}
+
+.nav a:last-child {
+  border-right: none;
+}
+
+.nav a.active {
+  font-weight: bold;
+  color: #353535;
+}
+
+
+/* layout styles */
 body {
   font-size: 1em;
   line-height: 1.5;
@@ -67,7 +89,7 @@ a:hover {
 
 .header {
   padding-top: 35px;
-  padding-bottom: 25px;
+  background: rgba(255, 255, 255, 0.9);
 }
 
 .header .title {
