@@ -12,11 +12,12 @@ jekyll serve:
 	# make serve &>_log/jekyll.log
 	bundle exec jekyll
 
-$(JEKYLL_DIR): $(JEKYLL_FILES)
-	@echo ... $? has changed. Reload ...
+$(SITE)/site.watch: $(SITE_FILES)
+	@echo >&2 ... Files have changed. Reload ...
 	@touch $@
-	curl -X POST http://localhost:35729/changed -d '{ "files": "$?" }'
+	@curl -s -X POST http://localhost:35729/changed -d '{ "files": "$?" }'
 
-compile: livereload $(JEKYLL_DIR)
 
-.PHONY: jekyll serve compile
+site: livereload $(SITE)/site.watch
+
+.PHONY: jekyll serve site
