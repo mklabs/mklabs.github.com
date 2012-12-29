@@ -8,8 +8,8 @@
     "url": "git://github.com/mklabs/mklabs.github.com.git"
   },
   "dependencies": {
-    "yeoman-jekyll": "http://nodeload.github.com/mklabs/mklabs.github.com/tarball/yeoman-jekyll",
-    "request": "~2.11.4"
+    "request": "~2.11.4",
+    "tiny-lr": "https://github.com/mklabs/tiny-lr/archive/master.tar.gz"
   },
   "devDependencies": {},
   "optionalDependencies": {},

@@ -1,2 +1,4 @@
 _site
 _temp
+_log/
+Gemfile.lock
