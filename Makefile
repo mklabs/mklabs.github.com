@@ -1,5 +1,5 @@
 
-include node_modules/tiny-lr/includes/tiny-lr.mk
+include node_modules/tiny-lr/tasks/tiny-lr.mk
 
 SITE ?= _site
 SITE_FILES ?= $(shell find $(SITE) -name '*.html' \! -name '*.js' \! -name '*.css')
