@@ -1,4 +1,0 @@
-#!/bin/bash
-
-
-impress2md notes.md > index.html
