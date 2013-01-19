@@ -1,0 +1,38 @@
+
+.nav {
+  position: fixed;
+  top: 12px;
+  right: 15px;
+  z-index: 100;
+}
+
+.nav a {
+  margin: 0 5px;
+  padding-right: 15px;
+  border-right: 1px dotted #eee;
+  text-decoration: none;
+
+  -webkit-transition: all 0.3s ease-out;
+     -moz-transition: all 0.3s ease-out;
+      -ms-transition: all 0.3s ease-out;
+       -o-transition: all 0.3s ease-out;
+          transition: all 0.3s ease-out;
+}
+
+.nav a:hover {
+  color: rgb(245, 96, 38);
+  -webkit-transform: scale(0.9);
+     -moz-transform: scale(0.9);
+      -ms-transform: scale(0.9);
+       -o-transform: scale(0.9);
+          transform: scale(0.9);
+}
+
+.nav a:last-child {
+  border-right: none;
+}
+
+.nav a.active {
+  font-weight: bold;
+  color: #353535;
+}

@@ -8,8 +8,7 @@
     "url": "git://github.com/mklabs/mklabs.github.com.git"
   },
   "dependencies": {
-    "request": "~2.11.4",
-    "tiny-lr": "https://github.com/mklabs/tiny-lr/archive/master.tar.gz"
+    "tiny-lr": "0.0.2"
   },
   "devDependencies": {},
   "optionalDependencies": {},

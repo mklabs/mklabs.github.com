@@ -1,4 +1,66 @@
 
+body {
+  color: #3e3e3e;
+  font: 13px/22px   'Open Sans', arial, sans-serif;
+  font-weight: 400;
+  background-color: white;
+}
+
+a {
+  color: rgb(245, 96, 38);
+  color: rgba(245, 96, 38, 0.9);
+  text-decoration: none;
+  display: inline-block;
+}
+
+a:hover {
+  color: #444;
+}
+
+.sidebar {
+  float: left;
+  width: 320px;
+  position: fixed;
+}
+
+body p {
+  margin-top: 0;
+}
+
+/** button specialization, taken from suit-button readme **/
+
+.btn {
+  border-color: #d9d9d9 #d9d9d9 #ccc;
+  border-radius: 2px;
+  color: #444;
+  background-color: #eee;
+}
+
+.btn:hover,
+.btn:focus,
+.btn:active,
+.btn.is-pressed {
+  border-color: #c6c6c6 #c6c6c6 #bbb;
+  color: #222;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  background-color: #f5f5f5;
+}
+
+.btn:focus {
+  border-color: #069;
+  outline: 0;
+}
+
+.btn:active,
+.btn.is-pressed {
+  box-shadow: inset 0 1px 2px rgba(0,0,0, 0.2);
+  background-color: #ccc;
+}
+
+
+/**
+
+Legacy
 
 .home .home-post {
   float: right;
@@ -32,3 +94,5 @@ body blockquote {
 .nav .icon-twitter:hover {
   color: #0084B4;
 }
+
+**/

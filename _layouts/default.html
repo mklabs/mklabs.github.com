@@ -4,49 +4,48 @@
   <meta charset="utf-8">
   <title>{{ page.title }} .::. {{ site.title }}</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
 
-  <link rel="stylesheet" href="{{ site.baseurl }}stylesheets/print.css">
-  <link rel="stylesheet" href="{{ site.baseurl }}stylesheets/pygment_trac.css">
-  <link rel="stylesheet" href="{{ site.baseurl }}stylesheets/stylesheet.css">
-  <link rel="stylesheet" href="{{ site.baseurl }}stylesheets/app.css">
+  {% if site.env == 'dev' %}
+  <!-- <link rel="stylesheet" href="{{ site.baseurl }}stylesheets/print.css"> -->
+  <!-- <link rel="stylesheet" href="{{ site.baseurl }}stylesheets/pygment_trac.css"> -->
+  <!-- <link rel="stylesheet" href="{{ site.baseurl }}stylesheets/stylesheet.css"> -->
+  <!-- <link rel="stylesheet" href="{{ site.baseurl }}stylesheets/app.css"> -->
 
   <!-- Font Awesome - http://fortawesome.github.com/Font-Awesome -->
-  <link rel="stylesheet" href="{{ site.baseurl }}stylesheets/fontawesome/css/font-awesome.css">
+  <!-- <link rel="stylesheet" href="{{ site.baseurl }}stylesheets/fontawesome/css/font-awesome.css"> -->
+
+  <link rel="stylesheet" href="http://localhost:5678/s/css/main.css">
+  {% else %}
+  <link rel="stylesheet" href="http://mkla.bz.github.com/s/css/main.css">
+  {% endif %}
 
 </head>
 <body>
-  <div class="container">
-    <div class="inner">
-      <header class="header">
-        <h1 class="title">
-          <a href="{{ site.baseurl }}">
-            {{ site.title }}
-            <span class="tagline">{{ site.tagline }}</span>
-          </a>
-        </h1>
+    <header class="top fixed">
+      <nav class="paths js-paths">
+        <a class="title" href="{{ site.baseurl }}">
+          {{ site.title }}
+        </a>
+      </nav>
 
-        <nav class="nav">
-          {{ page.tilte }}
-          <a href="/" class="{% if page.module == 'home' %}active{% endif %}"> Home</a>
-          <a href="https://github.com/mklabs" class=""> <i class="icon-github"></i> </a>
-          <a href="http://twitter.com/mklabs" class=""> <i class="icon-twitter"></i> </a>
-        </nav>
-      </header>
+      <nav class="nav">
+        {{ page.tilte }}
+        <a href="/" class="{% if page.module == 'home' %}active{% endif %}"> Home</a>
+        <a href="https://github.com/mklabs" class=""> <i class="icon-github"></i> </a>
+        <a href="http://twitter.com/mklabs" class=""> <i class="icon-twitter"></i> </a>
+      </nav>
+    </header>
 
-      {% if downloads %}
-      <section id="downloads" class="clearfix">
-        {% for download in downloads %}
-        <a href="{{ download.href }}" id="view-on-{{ download.type }}" class="button"><span>{{ download.text }}</span></a>
-        {% endfor %}
-      </section>
-      {% endif %}
-
-      <hr />
-
-      <section class="content{% if page.module %} {{ page.module }}{% endif %}">
-        {{ content }}
-      </section>
-    </div>
+    <section class="content{% if page.module %} {{ page.module }}{% endif %}">
+      {{ content }}
+    </section>
   </div>
+
+  {% if site.env == 'dev' %}
+  <script src="http://localhost:5678/s/js/manifest.js"></script>
+  {% else %}
+  <script src="http://mklab.bz/s/js/manifest.js"></script>
+  {% endif %}
 </body>
 </html>

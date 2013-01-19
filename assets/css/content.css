@@ -1,0 +1,14 @@
+
+.content {
+  padding: 80px;
+}
+
+.content a:visited:before {
+   content:  "\2713 ";
+}
+
+@media (max-width:30em) {
+  .content {
+    padding: 80px 2em;
+  }
+}

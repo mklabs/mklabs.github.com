@@ -8,8 +8,7 @@ JEKYLL_DIR ?= .
 JEKYLL_FILES = $(shell find _posts -name '*.md')
 JEKYLL_FILES += $(shell find stylesheets -name '*.css' \! -name '*.sass' \! -name '*.scss')
 
-jekyll serve:
-	# make serve &>_log/jekyll.log
+jekyll:
 	bundle exec jekyll
 
 $(SITE)/site.watch: $(SITE_FILES)
@@ -17,7 +16,12 @@ $(SITE)/site.watch: $(SITE_FILES)
 	@touch $@
 	@curl -s -X POST http://localhost:35729/changed -d '{ "files": "$?" }'
 
+serve:
+	h5bp serve
 
-site: livereload $(SITE)/site.watch
+start: livereload serve
+stop: livereload-stop
+
+site: start $(SITE)/site.watch
 
 .PHONY: jekyll serve site

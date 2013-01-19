@@ -4,8 +4,7 @@ markdown: rdiscount
 permalink: /:categories/:title/
 
 baseurl: '/'
-title: '☃ '
-tagline: 'mkla.bz'
+title: '~'
 
 
 env: 'dev'

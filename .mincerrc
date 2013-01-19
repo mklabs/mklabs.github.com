@@ -1,0 +1,9 @@
+-I assets/js
+-I assets/css
+-I assets/sass
+-I assets/templates
+-I assets/vendor
+-I assets
+-I components/font-awesome
+--nolint components/font-awesome
+--mount s
