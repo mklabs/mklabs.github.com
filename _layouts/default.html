@@ -7,17 +7,9 @@
   <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
 
   {% if site.env == 'dev' %}
-  <!-- <link rel="stylesheet" href="{{ site.baseurl }}stylesheets/print.css"> -->
-  <!-- <link rel="stylesheet" href="{{ site.baseurl }}stylesheets/pygment_trac.css"> -->
-  <!-- <link rel="stylesheet" href="{{ site.baseurl }}stylesheets/stylesheet.css"> -->
-  <!-- <link rel="stylesheet" href="{{ site.baseurl }}stylesheets/app.css"> -->
-
-  <!-- Font Awesome - http://fortawesome.github.com/Font-Awesome -->
-  <!-- <link rel="stylesheet" href="{{ site.baseurl }}stylesheets/fontawesome/css/font-awesome.css"> -->
-
-  <link rel="stylesheet" href="http://localhost:5678/s/css/main.css">
+  <link rel="stylesheet" href="http://localhost:5678/assets/css/main-b28c9f404a5c391c9a5e511415bcccb3.css">
   {% else %}
-  <link rel="stylesheet" href="http://mkla.bz.github.com/s/css/main.css">
+  <link rel="stylesheet" href="{{ site.baseurl }}assets/css/main-b28c9f404a5c391c9a5e511415bcccb3.css">
   {% endif %}
 
 </head>
@@ -43,9 +35,9 @@
   </div>
 
   {% if site.env == 'dev' %}
-  <script src="http://localhost:5678/s/js/manifest.js"></script>
+  <script src="http://localhost:5678/assets/js/manifest-68d0967722af493a74c2badcff211d8b.js"></script>
   {% else %}
-  <script src="http://mklab.bz/s/js/manifest.js"></script>
+  <script src="{{ site.baseurl }}assets/js/manifest-68d0967722af493a74c2badcff211d8b.js"></script>
   {% endif %}
 </body>
 </html>

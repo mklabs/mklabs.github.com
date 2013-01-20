@@ -6,4 +6,4 @@
 -I assets
 -I components/font-awesome
 --nolint components/font-awesome
---mount s
+--mount assets

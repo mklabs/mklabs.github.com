@@ -7,4 +7,4 @@ baseurl: '/'
 title: '~'
 
 
-env: 'dev'
+env: 'prod'
