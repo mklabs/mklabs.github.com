@@ -5,16 +5,17 @@ SITE ?= _site
 SITE_FILES ?= $(shell find $(SITE) -name '*.html' \! -name '*.js' \! -name '*.css')
 
 JEKYLL_DIR ?= .
-JEKYLL_FILES = $(shell find _posts -name '*.md')
-JEKYLL_FILES += $(shell find stylesheets -name '*.css' \! -name '*.sass' \! -name '*.scss')
+JEKYLL_FILES += $(shell find assets -name '*.css' \! -name '*.sass' \! -name '*.scss')
+JEKYLL_FILES += $(shell find assets -name '*.js')
 
 jekyll:
 	bundle exec jekyll
 
 $(SITE)/site.watch: $(SITE_FILES)
 	@echo >&2 ... Files have changed. Reload ...
-	@touch $@
+	@echo >&2 $?
 	@curl -s -X POST http://localhost:35729/changed -d '{ "files": "$?" }'
+	@touch $@
 
 serve:
 	h5bp serve
@@ -47,6 +48,6 @@ clean-s-dry:
 start: livereload serve
 stop: livereload-stop
 
-site: start $(SITE)/site.watch
+watch: $(SITE)/site.watch
 
 .PHONY: jekyll serve site
