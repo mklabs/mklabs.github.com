@@ -1,5 +1,5 @@
 
-include node_modules/tiny-lr/tasks/tiny-lr.mk
+include node_modules/tiny-lr/tinylr.mk
 
 SITE ?= _site
 SITE_FILES ?= $(shell find $(SITE) -name '*.html' \! -name '*.js' \! -name '*.css')
@@ -7,6 +7,14 @@ SITE_FILES ?= $(shell find $(SITE) -name '*.html' \! -name '*.js' \! -name '*.cs
 JEKYLL_DIR ?= .
 JEKYLL_FILES += $(shell find assets -name '*.css' \! -name '*.sass' \! -name '*.scss')
 JEKYLL_FILES += $(shell find assets -name '*.js')
+
+# Docker
+
+docker-build:
+	docker build -t ubuntu_jekyll .
+
+docker-run:
+	echo docker run -p 4000:4000 -d --name jekyll -v $(PWD):/data ubuntu_jekyll
 
 jekyll:
 	bundle exec jekyll
