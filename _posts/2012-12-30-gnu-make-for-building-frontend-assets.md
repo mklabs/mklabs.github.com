@@ -22,7 +22,7 @@ more about Make.
 That sentence: "Make will utilize mtime and only build what's necessary, this
 is great" is really what got me into this learning process.
 
-So I've trying to learn Make a bit more, seeking particularly how I can use it
+So I've been trying to learn Make a bit more, seeking particularly how I can use it
 to build my frontend assets.
 
 Let me try to put here my findings.
@@ -49,7 +49,7 @@ Example: Concat and minify a list of JavaScript files through uglifyjs
     # Our target is a simple compilation rule for application.js
     application.min.js: application.js foo.js
       @echo Prerequisites $^
-      @echo Changes files: $?
+      @echo Changed files: $?
       @echo Compiling $@
       uglify-js2 $? > $@
 
@@ -268,7 +268,7 @@ the same kind of pattern for any non trivial, long running process.
 
 Setting up a LiveReload step within your makefile is rather straighforward.
 
-    include node_modules/tiny-lr/tasks/*.mk
+    include node_modules/tiny-lr/tinylr.mk
 
     CSS_DIR = app/styles
     CSS_FILES = $(shell find $(CSS_DIR) -name '*.css')
@@ -284,7 +284,7 @@ Setting up a LiveReload step within your makefile is rather straighforward.
 
 The pattern is always the same:
 
-- include the recipes from `tiny-lr` into tour project Makefile
+- include the recipes from `tiny-lr` into your project Makefile
 - define a target for your root directory
 - define your "empty" targets, and the list of files you want to monitor.
 - trigger a POST request and `touch` the directory to update its mtime
