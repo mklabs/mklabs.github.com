@@ -6,5 +6,4 @@ permalink: /:categories/:title/
 baseurl: '/'
 title: '~'
 
-
 env: 'prod'

@@ -8,7 +8,7 @@
     "url": "git://github.com/mklabs/mklabs.github.com.git"
   },
   "dependencies": {
-    "tiny-lr": "0.0.2"
+    "tiny-lr": "latest"
   },
   "devDependencies": {},
   "optionalDependencies": {},
