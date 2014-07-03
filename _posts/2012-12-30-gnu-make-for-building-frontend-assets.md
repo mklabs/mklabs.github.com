@@ -1,7 +1,7 @@
 ---
 layout: post
 title: GNU Make for building frontend assets
-published: false
+published: true
 ---
 
 Make is there like forever and is a very powerful build tool. It's like the VIM

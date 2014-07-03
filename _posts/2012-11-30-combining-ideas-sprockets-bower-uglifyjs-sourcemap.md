@@ -1,85 +1,55 @@
 ---
 layout: post
 title: Sprockets, bower, uglifyjs2 & sourcemaps.
-published: false
+published: true
 ---
 
-I'm writing this blogish thing right after dotjs.eu conference, that happened
-november 30th. There were a lot of awesome speakers, and a lot of awesome
-talks.
+I'm about to write on the results of some of the experiments
+I did lately related to build concatenation / minification and
+integration with package managers.
 
-This is not a conference retrospective, I'm about to write down on paper the
-results of some of the experiments I did lately related to build concatenation
-/ minification and integration with package managers.
-
-But one of the task from Vojni that I really liked, was about the idea.. of
-combining ideas. And this experiment is all about that: combining ideas.
-
-Nothing is really new, sprockets is there for quite some time now whereas bower
-and uglifyjs2 just camed out. What can be interesting though, is how you can
-combine and use them altogether.
+Nothing is really new, sprockets is there for quite some time now
+whereas bower and uglifyjs2 just camed out. What can be interesting
+though, is how you can combine and use them altogether.
 
 Sprockets
 ---------
 
-I had this need of finding an effective way to bundle and compile my JavaScript
-assets. The Rails asset pipeline is probably one of the most advanced and well
-crafted system to manage your frontend dependencies.
+The Rails asset pipeline is probably one of the most advanced and well
+crafted system to manage frontend dependencies.
 
-The practical implementation of the Rails asset pipeline relies on this really
-neat tool called Sprockets (version 2), made by ...
-
-I don't know why, but until really recently, I was pretty much convinced that
-Sprockets was tied to ruby or rails project, and that I couldn't use it for my
-own stuff (let's say an express app, a symfony app, a whatever app, etc.).
-
-Turns out I was wrong.. plain wrong. And I never felt so good about being sooo
-wrong.
+It's efficient, pragmatic and simple. It relies on a set of *directives*
+like `require` or `require_tree`.
 
 Sprockets come with a little binary utility that can be used to precompile
 assets (rails also has this rake precompile task), which means that it's not
 tied to your app architecture or backend framework. You can use anything, as
-long as you're delivering JS / CSS assets to the browser (most of the time,
-this is what we do right?)
+long as you're delivering JS / CSS assets to the browser.
 
-If you're not afraid of ruby, if you've started to use compass, then you should
-really take a look and consider seriously to integrate Sprockets in your
-workflow.
+Unlike browserify or requirejs, it relies on the global scope, but
+that's sometimes just what I need. Maintaining an old codebase is one of
+this use case where rewriting a bunch of JS files to adhere to the
+CommonJS or RequireJS convention is not possible.
 
-node and ruby are becoming a near-to-mandatory tool in the front-end
-development toolbet. At least, in mine.
+Sprockets is using ruby and is integrated into Rails. If you're looking
+for a node alternative, [mincer](https://github.com/nodeca/mincer) is
+pretty good.
 
 Bower
 -----
 
 Bower is this really nice little package manager designed primarily for
-frontend.
+frontend. It's not tied to any kind of build tool.
 
-Of course, it's not the first one, and we can already see some segmentation in
-this field with the emergence of a lot of them (jam, volo, components, bower,
-ender even if this one was there before. Eh, you can even use npm if you want
-to, just use your own private registry).
-
-But what set it aside to me (just as I would be keen to start using npm with
-private registry for frontend assets), is that it's maybe the first one not
-tied to any kind of build tool, or having an opinionated way of managing
-dependencies (eg. commonjs vs amd).
-
-It's then up to third party tools to consume the API provided by Bower, or just
-perform the lookup themselves in the components/ directory, and then do their
-stuff.
-
-This is what Sprockets did exactly. Sprockets is even mentioned in bower's
-readme.
-
+It's then up to third party tools to consume the API provided by Bower,
+or just perform the lookup themselves in the `bower_components/`
+directory, and then do their stuff.
 
 UglifyJS2
 ---------
 
 You might have heard this already, but uglifyjs has been entirely rewritten
 from scratch, mostly for the support of sourcemaps.
-
-If you're not familiar with sourcemaps, check out this article or this one.
 
 Sprockets support for sourcemap is not there yet, but is definitely coming.
 That being said, there might be some ways to still be able to compute
@@ -114,8 +84,8 @@ It relies on this very simple but brilliant concept of "directives", where
 simple comments like `// = require './awesome-app'` gets parsed and the content
 of that required file is simply inserted there. Couple that with
 "preprocessors" and you have a very powerful build chain, actually something
-really close to the Rails asset pipeline (which in my opinion is what put Rails
-aside in term of front-end development).
+really close to the Rails asset pipeline (which in my opinion is what makes Rails
+so good in term of front-end development).
 
 ### Sprocketize / Bowerize
 
@@ -124,10 +94,10 @@ resolved just well.
 
 You need a bit of configuration though, not much.
 
-Sprockets needs you to specify the load path, under which paths should
-Sprockets look for assets, when you require them.
+Sprockets needs you to specify the load path, which is then used by
+Sprockets to lookup for assets, when you require them.
 
-You can do using the `-I` or `--include` options, that you can put once and for
+You can do so, using the `-I` or `--include` options, that you can put once and for
 all on a local `.sprocketsrc` file. This file should look like this:
 
     -I ./
@@ -158,7 +128,6 @@ manifest file), no manual scripts tag wiring:
     // = require ./local-stuff
 
     console.log('Testing out Sprockets & Bower');
-    console.log('Its like bread and butter');
 
 The ordering still matters, nothing crazy with that or nothing new. Of course,
 if one of the required files, has itself some requirements, sprockets will
@@ -188,9 +157,36 @@ Of course, sprockets can minify your JavaScript, but is still using the first
 verison of uglifyjs. While the sourcemap support is on the way, we'll proceed a
 bit differently.
 
-The idea is to put
-
-
 So the final command is something like:
 
+  # TODO: redo the sprockets-concat script, cannot find it
 	uglifyjs2 $(sprockets-concat scripts/manifest.js) --source-map scripts/manifest.js --source-map-root / > scripts/bundle.js
+
+
+The `$(sprockets-concat scripts/manifest.js)` part outputs the list of
+required assets as Sprockets would do, but only output their paths, in
+the correct order.
+
+    // = require jquery
+    // = require underscore
+    // = require backbone
+    // = require ./local-stuff
+
+becomes
+
+    bower_components/jquery/jquery.js
+    bower_components/underscore/underscore.js
+    bower_components/backbone/backbone.js
+    local-stuff.js
+
+which is then used by uglify to concat and minify scripts/bundle.js
+file, along with sourcemap.
+
+The `sprockets-concat` script remains to be written, and I cannot find
+the script I once written for this experiment. Whenever I have time to
+redo it, or have the chance to find it in my gists, I'll update the post
+accordingly.
+
+## Related gists
+
+- [https://gist.github.com/mklabs/3f8166edd0b6d796d347](https://gist.github.com/mklabs/3f8166edd0b6d796d347)

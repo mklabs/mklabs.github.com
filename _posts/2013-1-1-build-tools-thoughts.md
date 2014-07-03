@@ -1,7 +1,7 @@
 ---
 layout: post
-title: build tools rework
-published: false
+title: build tools thoughts
+published: true
 ---
 
 Build tools are just command line API to trigger repetitive and commonly
@@ -9,7 +9,7 @@ used "tasks" within your project. They can be written in any language,
 but most often they are tied to a particular platform and / or build
 tool.
 
-I'm putting down here some of the thoughts and principles I'm now now trying to
+I'm putting down here some of the thoughts and principles I'm now trying to
 apply when writing tasks and scripts.
 
 - Abstract away from your build tool of choice.
@@ -67,48 +67,8 @@ should be standard nodejs (you're of course free to use any npm packages).
 The idea is to keep in mind that the tool you are building can be used with any
 kind of built tool, either it is Grunt, Make, Cake, Jake or even Rake.
 
-npm is pretty smart when it comes to the handling of binary files, you don't
+npm is pretty smart when it comes to binary files, you don't
 have to install things globally to start using them. The local
 `./node_modules/.bin` folder can be used by these build tools, maybe by putting
 this path at the front of the `$PATH` environment variable (this works nicely
 with Make for instance)
-
-## Leverage Streams
-
-Streams are awesome. We should use them.
-
-Here is the typical layout of a binary file I like to use:
-
-```
-#!/usr/bin/env node
-
-var mything = require('..');
-var nopt    = require('nopt');
-
-// you can of course use any other option-parser library, but nopt is nice and
-// very small
-var opts = nopt();
-
-// deal with command line args and opts here
-var file = opts.argv.remain[0] || '';
-
-// some help?
-if(!file || opts.help) {
-  // ... help ...
-}
-
-tomdox(file, opts).pipe(process.stdout);
-```
-
-The top level API exposes a very simple function that takes arguments and
-options as input, and returns a Readable stream.
-
-You can then pipe the output to any valid Writable stream (typically
-process.stdout).
-
-The next step is to do the other way around, being able to take an input stream
-(typically process.stdin). We can see that pattern in good cli tool like
-[uglify-js2](https://github.com/mishoo/UglifyJS2) or
-[dox](https://github.com/visionmedia/dox).
-
-
