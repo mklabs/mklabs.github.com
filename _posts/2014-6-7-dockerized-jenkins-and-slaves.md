@@ -1,6 +1,7 @@
 ---
 layout: post
 title: dockerized jenkins and slave
+published: false
 ---
 
 I've been struggling with it quite a bit. The idea is to spawn up a
