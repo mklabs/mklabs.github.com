@@ -20,7 +20,7 @@ The `POST :path` syntax is quite easy to understand, express needs two things
 to define a route:
 
 - An HTTP verb (GET, POST, PUT, ...)
-- URL pattern to use for the routing
+- An URL pattern to use for the routing
 
 This is a way to define a specific verb, when it differs from the default
 `GET`. This is similar to defining a click or mouseover event client-side,
@@ -179,4 +179,4 @@ app.listen(3000);
 
 Quite concise, with the conveniency of a real class. ES6 goodness ;)
 
-This is merely a few lines, but I might push that to npm ...
+This is merely a few lines, but I might push that to npm.
