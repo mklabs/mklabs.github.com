@@ -1,0 +1,14 @@
+{
+  "name": "mklabs.github.com",
+  "version": "1.0.0",
+  "description": "Jekyll blog / site",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mklabs/mklabs.github.com.git"
+  },
+  "devDependencies": {
+    "jekyll-preview": "^1.0.0",
+    "tiny-lr": "^0.2.1"
+  }
+}
