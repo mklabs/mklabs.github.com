@@ -10,23 +10,6 @@ layout: default
     <section class="post-content">
       <a name="topofpage"></a>
       {{content}}
-
-      <div class="bottom-teaser cf">
-      <div id="disqus_thread"></div>
-<script>
-var disqus_config = function () {
-  this.page.url = document.location.href;
-  this.page.identifier = document.location.pathname;
-};
-(function() {
-  var d = document, s = d.createElement('script');
-  s.src = '//mklabz.disqus.com/embed.js';
-  s.setAttribute('data-timestamp', +new Date());
-  (d.head || d.body).appendChild(s);
-})();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
-      </div>
     </section>
     <footer class="post-footer">
       <section class="share">
@@ -36,6 +19,22 @@ var disqus_config = function () {
         </a>
       </section>
     </footer>
+    <div class="bottom-teaser cf">
+    <div id="disqus_thread"></div>
+<script>
+var disqus_config = function () {
+this.page.url = document.location.href;
+this.page.identifier = document.location.pathname;
+};
+(function() {
+var d = document, s = d.createElement('script');
+s.src = '//mklabz.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+    </div>
     <div class="bottom-teaser cf">
       <div class="isLeft">
         <h5 class="index-headline featured"><span>Written by</span></h5>
