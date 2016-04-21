@@ -1,7 +1,7 @@
 ---
 layout: post
 title: ES6 Class based Express routing
-published: false
+published: true
 ---
 
 Here is a little pattern I like when working on a little express application.
