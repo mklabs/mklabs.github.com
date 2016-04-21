@@ -1,9 +1,0 @@
-{
-  "app": ".",
-  "temp": "_temp",
-  "dist": "_site",
-  "scripts": "scripts",
-  "styles": "stylesheets",
-  "vendor": "scripts/vendor",
-  "images": "images"
-}
