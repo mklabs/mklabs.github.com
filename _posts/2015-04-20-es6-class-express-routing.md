@@ -24,8 +24,10 @@ routes: {
 The `POST :path` syntax is quite easy to understand, express needs two things
 to define a route:
 
-- a verb (GET, POST, PUT, ...)
-- a path
+---
+verb; An HTTP verb (GET, POST, PUT, ...)
+path: URL pattern to use for the routing
+---
 
 This is a way to define a specific verb, when it differs from the default
 `GET`. This is similar to defining a click or mouseover event client-side,
