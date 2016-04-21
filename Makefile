@@ -18,8 +18,17 @@ css:
 	TODO: build css here
 	"""
 
+post:
+	git commit _posts -am 'Update post'
+	git push origin master
+
+new:
+	touch _posts/`date +%y-%m-%d-$title.md`
+	echo """
+	Created  _posts/`date +%y-%m-%d-$title.md`
+	"""
+
 watch: tinylr
 	watchd $files -c 'bake css' &
 
 all: watch start
-
