@@ -1,28 +1,7 @@
 Website
 =======
 
-Install
--------
-
-Grab dev dependencies
-
-    npm install
-
-Install Jekyll
-
-    gem install jekyll rdiscount
-
-Run
----
-
-    bundle install
-    bundle exec jekyll # or make jekyll
-
-
-*or*, using docker
-
-    make docker-build
-    make docker-run
+http://mklabs.github.com
 
 ---
 
