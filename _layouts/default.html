@@ -234,12 +234,12 @@ pre > code { border: 0; padding-right: 0; padding-left: 0; }
 
       <div class="page-links">
         <a class="page-link" href="{{ site.baseurl }}/">Home</a>
+        • <a class="page-link" href="/blog.mklog.fr/">2010/2011</a>
         {% for my_page in site.pages %}
           {% if my_page.title %}
           • <a class="page-link" href="{{ my_page.url | prepend: site.baseurl }}">{{ my_page.title }}</a>
           {% endif %}
         {% endfor %}
-        • <a class="page-link" href="/blog.mklog.fr/">2010/2011</a>
       </div>
     </header>
 
