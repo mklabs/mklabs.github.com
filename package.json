@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "js-yaml": "^3.6.0",
-    "lodash.kebabcase": "^4.0.1"
+    "lodash.kebabcase": "^4.0.1",
+    "mkdirp": "^0.5.1"
   }
 }
