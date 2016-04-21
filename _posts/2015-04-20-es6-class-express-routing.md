@@ -4,12 +4,7 @@ title: ES6 Class based Express routing
 published: true
 ---
 
-Here is a little pattern I like when working on a little express application.
-
-The idea is to store a mapping of `path:method` in a property, a bit like
-Backbone does for `events: {}` in `Backkbone.View`s.
-
-With the new ES6 class sugar, it gets even better.
+Here is a little pattern I like when working on a little express application. The idea is to store a mapping of `path:method` in a property, a bit like Backbone does for `events: {}` in `Backkbone.View`s. And with the new ES6 class sugar, it gets even better.
 
 ### The routes hash
 
