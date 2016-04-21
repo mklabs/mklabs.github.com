@@ -1,4 +1,34 @@
-permalink: '/:categories/:title/'
-baseurl: '/'
-title: '~'
-env: 'prod'
+# Welcome to Amplified for Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely need to edit after that.
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'jekyll serve'. If you change this file, please restart the server process.
+
+# Site settings
+title: mkla.bz
+email: daniel.mickael@gmail.com
+description: >
+  Vim, JavaScript & node
+
+# logo: "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+# logo: "https://raw.githubusercontent.com/voodootikigod/logo.js/master/js.png"
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "http://mkla.bz" # the base hostname & protocol for your site
+paginate:	3 # The number of posts to show per page on your homepage
+
+name: 'Mickael Daniel'
+bio: >
+  30 years old passionate JavaScript developper
+author_image: "https://avatars2.githubusercontent.com/u/113832?v=3&s=460"
+twitter_username: mklabs
+github_username:  mklabs
+
+# Build settings
+markdown: kramdown
+
+kramdown:
+  parse_block_html: true
+
+gems:
+  - jekyll-paginate

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Sprockets, bower, uglifyjs2 & sourcemaps.
-published: true
+published: false
 ---
 
 I'm about to write on the results of some of the experiments

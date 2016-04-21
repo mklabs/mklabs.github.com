@@ -1,7 +1,7 @@
 ---
 layout: post
 title: build tools thoughts
-published: true
+published: false
 ---
 
 Build tools are just command line API to trigger repetitive and commonly
