@@ -1,7 +1,7 @@
 ---
 layout: post
 title: ES6 node setup & Makefile template
-published: false
+published: true
 ---
 
 Working on the next version of [tabtab][] (which was not updated for 2 years),
