@@ -145,20 +145,20 @@ and a `.babelrc` somewhere between the project directory and `~/` with:
 
 Here is the few commands to run to get started with this config:
 
-		# package.json file
-		$ curl https://gist.githubusercontent.com/mklabs/0f30c2c0520359676c65616efa93e7fd/raw/ef5327fb557306510b02bd139698c9d2771e057b/package.json > package.json
-
-		# update deps
-		$ npm i eslint mocha babel-cli babel-preset-es2015 --save-dev
-
-		# Makefile
-		$ curl https://gist.githubusercontent.com/mklabs/0f30c2c0520359676c65616efa93e7fd/raw/28ee0a810f6af96ce7d965c6d776c0ecdd596d0b/Makefile > Makefile
-
-		$ mkdir -p bin lib test
+	# package.json file
+	$ curl https://gist.githubusercontent.com/mklabs/0f30c2c0520359676c65616efa93e7fd/raw/ef5327fb557306510b02bd139698c9d2771e057b/package.json > package.json
+	
+	# update deps
+	$ npm i eslint mocha babel-cli babel-preset-es2015 --save-dev
+	
+	# Makefile
+	$ curl https://gist.githubusercontent.com/mklabs/0f30c2c0520359676c65616efa93e7fd/raw/28ee0a810f6af96ce7d965c6d776c0ecdd596d0b/Makefile > Makefile
+	
+	$ mkdir -p bin lib test
 
 Or clone the [gist]:
 
-		$ git clone https://gist.github.com/0f30c2c0520359676c65616efa93e7fd.git package-name
+	$ git clone https://gist.github.com/0f30c2c0520359676c65616efa93e7fd.git package-name
 
 
 [gist]: https://gist.github.com/mklabs/0f30c2c0520359676c65616efa93e7fd
