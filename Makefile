@@ -1,34 +1,8 @@
-files = "_posts/**/* assets/**/*"
-changed = "style.css"
 
-jekyll:
-	bundle exec jekyll
+all: help
 
-notify:
-	curl http://localhost:35729/changed?files=$changed
+help:
+	bake -h
 
-tinylr:
-	[ -e tiny-lr.pid ] || tiny-lr &
-
-start:
+serve:
 	jekyll-preview
-
-css:
-	echo """
-	TODO: build css here
-	"""
-
-post:
-	git commit _posts -am 'Update post'
-	git push origin master
-
-new:
-	touch _posts/`date +%y-%m-%d-$title.md`
-	echo """
-	Created  _posts/`date +%y-%m-%d-$title.md`
-	"""
-
-watch: tinylr
-	watchd $files -c 'bake css' &
-
-all: watch start

@@ -3,3 +3,4 @@ import/ importer.js
 import/
 importer.js
 .tern-port
+node_modules/

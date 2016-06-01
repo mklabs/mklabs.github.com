@@ -1,5 +1,5 @@
 {
-  "name": "mklabs.github.com",
+  "name": "mkla.bz",
   "version": "1.0.0",
   "description": "Jekyll blog / site",
   "main": "index.js",
@@ -8,12 +8,7 @@
     "url": "git+https://github.com/mklabs/mklabs.github.com.git"
   },
   "devDependencies": {
-    "jekyll-preview": "^1.0.0",
-    "tiny-lr": "^0.2.1"
+    "jekyll-preview": "^1.0.0"
   },
-  "dependencies": {
-    "js-yaml": "^3.6.0",
-    "lodash.kebabcase": "^4.0.1",
-    "mkdirp": "^0.5.1"
-  }
+  "homepage": "http://mkla.bz"
 }
