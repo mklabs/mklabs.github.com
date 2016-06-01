@@ -7,6 +7,9 @@ help:
 serve:
 	jekyll-preview
 
+browserify:
+	browserify -e search/search.js -o search/bundle.js
+
 watch:
-	watchify gh-opns/search.js -p [livereactload] -o gh-opns/bundle.js &
+	watchify search/search.js -p [livereactload] -o search/bundle.js &
 	bake serve
