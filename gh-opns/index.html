@@ -112,28 +112,132 @@ code { padding: 1px 5px; }
 pre { padding: 8px 12px; overflow-x: scroll; }
 pre > code { border: 0; padding-right: 0; padding-left: 0; }
 
-.blog-title, .post {
-  margin-top: 70px;
+.site-header a {
+  padding: 10px;
+  color: #000;
+  font-size: 11px;
+  text-decoration: none;
+}
+
+.search-input {
+  position: fixed;
+  bottom: -2px;
+  left: 0;
+  z-index: 10;
+  font-size: 40px;
+  padding: 15px 30px;
+  font-family: inherit;
+  font-weight: 100;
+  border: none;
+  outline: none;
+  border-bottom: 5px solid #eee;
+  background: rgba(255, 255, 255, .95);
+  width: 100%;
+}
+
+.opns-items {
+  margin: 40px 0;
+  width: 100%;
+  max-width: 1140px;
+  min-width: 300px;
+}
+
+.opns-item {
+  position: relative;
+  overflow: hidden;
+  border-bottom: 1px solid #eee;
+  padding: 16px 14px;
+}
+
+.opns-item .header {
+  float: left;
+  width: 20%;
+  margin-right: 20px;
+}
+
+.opns-item h3 {
+  margin: 0;
+  line-height: 1.3;
+}
+
+.opns-item h3 a {
+  color: inherit;
+}
+
+.opns-item .repo {
+  font-size: 12px;
+  color: #7f7f7f;
+}
+
+.opns-item p {
+  overflow: hidden;
+  margin: 2px 0 0 0;
+  line-height: 1.3;
+  max-width: 40em;
+}
+
+.opns-item .info {
+  float: right;
+  max-width: 10em;
+  margin-left: 20px;
+  font-size: 12px;
+  color: #7f7f7f;
+  display: block;
+  line-height: 1.4;
+}
+
+.opns-item .info td {
+  vertical-align: top;
+}
+
+.opns-item .info td:first-child {
+  opacity: 0.6;
+  width: 20%;
+  padding-right: 10px;
 }
 
   </style>
 </head>
 <body>
+
   <header class="site-header">
-    <a href="{{ site.baseurl }}/" class="logo">
+    <a href="http://mkla.bz/">
       /home
+    </a>
+
+    <a href="http://mkla.bz/gh-opns/">
+      /search
     </a>
   </header>
 
   <main class="content" role="main">
     <article class="post">
       <div class="post-meta">
-        <h1 class="post-title">{{ page.title }}</h1>
+        <h1 class="post-title">
+          Use
+          <a href="https://developer.github.com/v3/search/">
+            GitHub code search API
+          </a>
+          to search through
+          <a href="https://github.com/mklabs/mklabs.github.com">
+            repo content
+          </a>.
+        </h1>
       </div>
-      <section class="post-content">
-        <a name="topofpage"></a>
-        {{content}}
+
+      <section class="post-content js-results">
+
+        <div class="opns-item">
+          <header class="header">
+            <h3><a data-href="url" data-text="name" href="https://github.com/mbostock/d3">d3</a></h3>
+            <a class="repo" data-text="repository" data-href="url" href="https://github.com/mbostock/d3">mbostock/d3</a>
+          </header>
+          <p data-text="description">A small, free JavaScript library for manipulating documents based on data.</p>
+        </div>
+
       </section>
+
+      <input type="text" on-input="search" placeholder="Search" accesskey="s" class="search-input">
     </article>
   </main>
 
