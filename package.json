@@ -1,7 +1,8 @@
 {
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "name": "mkla.bz",
+  "version": "1.0.0",
+  "description": "Jekyll blog / site",
+  "homepage": "http://mkla.bz",
   "devDependencies": {
     "babel-plugin-react-transform": "^2.0.2",
     "babel-preset-es2015": "^6.9.0",
@@ -20,15 +21,6 @@
       "babelify"
     ]
   },
-  "name": "mkla.bz",
-  "version": "1.0.0",
-  "description": "Jekyll blog / site",
-  "main": "index.js",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/mklabs/mklabs.github.com.git"
-  },
-  "homepage": "http://mkla.bz",
   "dependencies": {
     "bel": "^4.3.1",
     "delegate": "^3.0.1",
