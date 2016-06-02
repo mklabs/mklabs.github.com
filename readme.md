@@ -18,3 +18,10 @@ Install bake globally (or use `./node-modules/.bin/bake`)
     npm i bake-cli -g
 
 
+```
+Targets:
+  all                Run help target
+  help               List targets
+  serve              Run jekyll-preview server
+  watch              Run watchify with livereactload
+```
