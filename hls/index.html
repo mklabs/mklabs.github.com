@@ -23,11 +23,12 @@
 
   <iframe
       class="fullscreen"
-      src="http://player.twitch.tv/?channel=mklabs&autoplay=true"
+      src="http://player.twitch.tv/?channel=mklabs"
       sandbox="allow-modals allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts"
       frameborder="0"
       scrolling="no"
       allowfullscreen="true">
   </iframe>
+  <script>document.querySelector('fullscreen').src += '&' location.search.replace(/^?/, '')</script>
 </body>
 </html>
