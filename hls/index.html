@@ -7,10 +7,27 @@
   <meta name="description" content="Jekyll blog / site">
   <meta name="author" content="">
   <meta name="viewport" content="width=device-width,initial-scale=1">
+  <style>
+    .fullscreen {
+      position:absolute;
+      top:0;
+      left:0;
+      right:0;
+      bottom:0;
+      width:100%;
+      height:100%;
+    }
+  </style>
 </head>
 <body>
+
   <iframe
-    sandbox="allow-modals allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts" frameborder="0" name="JS Bin Output "
-    src="http://twitch.tv/mklabs/hls"></iframe>
+      class="fullscreen"
+      src="http://player.twitch.tv/?channel=mklabs&autoplay=true"
+      sandbox="allow-modals allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts"
+      frameborder="0"
+      scrolling="no"
+      allowfullscreen="true">
+  </iframe>
 </body>
 </html>
