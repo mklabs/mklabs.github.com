@@ -6,7 +6,7 @@
 # 'jekyll serve'. If you change this file, please restart the server process.
 
 # Site settings
-title: mkla.bz
+title: mklabs.github.com
 email: daniel.mickael@gmail.com
 description: >
   Vim, JavaScript & node
@@ -14,11 +14,11 @@ description: >
 # logo: "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
 # logo: "https://raw.githubusercontent.com/voodootikigod/logo.js/master/js.png"
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "http://mkla.bz" # the base hostname & protocol for your site
-paginate:	3 # The number of posts to show per page on your homepage
+url: "https://mklabs.github.com" # the base hostname & protocol for your site
+paginate:	10 # The number of posts to show per page on your homepage
 
 name: 'Mickael Daniel'
-bio: ''
+bio: 'Dev'
 author_image: "https://avatars2.githubusercontent.com/u/113832?v=3&s=460"
 twitter_username: mklabs
 github_username:  mklabs
