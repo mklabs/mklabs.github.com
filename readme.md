@@ -3,7 +3,8 @@
 
 ---
 
-My old blog with french articles can still be found on my github at: http://mklabs.github.com/blog.mklog.fr
+My old blog with french articles can still be found on my github at:
+http://mklabs.github.com/blog.mklog.fr
 
 ## Install
 
@@ -20,3 +21,7 @@ Grab dev dependencies
 Example
 
     npm run browserify
+
+---
+
+I feel like I'll end up with a basic website with good old html + css

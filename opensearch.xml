@@ -10,5 +10,5 @@
     method="get"
     type="text/html"
     template="http://mklabs.github.io/search/?q={searchTerms}"/>
-  <moz:SearchForm>http://mkla.bz/search/</moz:SearchForm>
+  <moz:SearchForm>http://mklabs.github.io/search/</moz:SearchForm>
 </OpenSearchDescription>
