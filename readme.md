@@ -13,19 +13,6 @@ Grab dev dependencies
 
 ## Tasks
 
-Hint: bake became make
-
-Note: todo, rework tooling
-
-Install bake globally (or use `./node-modules/.bin/bake`)
-
-    npm i bake-cli -g
-
-
-```
-Targets:
-  all                Run help target
-  help               List targets
-  serve              Run jekyll-preview server
-  watch              Run watchify with livereactload
-```
+    serve => should serve a jekyll preview (broken atm)
+    browserify => builds search/search.js into search/bundle.js
+    watchify => same but with watchify and livereactload
