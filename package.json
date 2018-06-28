@@ -2,7 +2,7 @@
   "name": "mkla.bz",
   "version": "1.0.0",
   "description": "Jekyll blog / site",
-  "homepage": "http://mkla.bz",
+  "homepage": "http://mklabs.github.io",
   "devDependencies": {
     "babel-plugin-react-transform": "^2.0.2",
     "babel-preset-es2015": "^6.9.0",
@@ -16,11 +16,19 @@
     "watchify": "^3.7.0",
     "jekyll-preview": "^1.0.0"
   },
+
   "browserify": {
     "transform": [
       "babelify"
     ]
   },
+
+  "scripts": {
+    "serve": "jekyll-preview",
+    "browserify": "browserify -e search/search.js -o search/bundle.js",
+    "watch": "watchify search/search.js -p [livereactload] -o search/bundle.js"
+  },
+
   "dependencies": {
     "bel": "^4.3.1",
     "delegate": "^3.0.1",
