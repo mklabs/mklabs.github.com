@@ -9,6 +9,6 @@
   <Url
     method="get"
     type="text/html"
-    template="http://mkla.bz/search/?q={searchTerms}"/>
+    template="http://mklabs.github.io/search/?q={searchTerms}"/>
   <moz:SearchForm>http://mkla.bz/search/</moz:SearchForm>
 </OpenSearchDescription>
