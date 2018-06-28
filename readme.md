@@ -16,3 +16,7 @@ Grab dev dependencies
     serve => should serve a jekyll preview (broken atm)
     browserify => builds search/search.js into search/bundle.js
     watchify => same but with watchify and livereactload
+
+Example
+
+    npm run browserify
