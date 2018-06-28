@@ -25,6 +25,7 @@
   "dependencies": {
     "bel": "^6.0.0",
     "delegate": "^3.0.1",
+    "jekyll-preview": "^1.0.0",
     "qs": "^6.2.0",
     "yields-k": "^0.7.2",
     "yo-yo": "^1.2.1"
