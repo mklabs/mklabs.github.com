@@ -6,28 +6,32 @@
 # 'jekyll serve'. If you change this file, please restart the server process.
 
 # Site settings
+url: "http://localhost"
+port: 3000
+
+source:      .
+destination: ./_site
+
 title: mklabs.github.io
-email: daniel.mickael@gmail.com
-description: >
-  Vim, JavaScript & node
+description: "@mklabs website"
 
-# logo: "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
-# logo: "https://raw.githubusercontent.com/voodootikigod/logo.js/master/js.png"
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://mklabs.github.io" # the base hostname & protocol for your site
-paginate:	10 # The number of posts to show per page on your homepage
+lang: 'fr'
+permalink: 'articles/:title/'
 
-name: 'Mickael Daniel'
-bio: 'Dev'
-author_image: "https://avatars2.githubusercontent.com/u/113832?v=3&s=460"
-twitter_username: mklabs
-github_username:  mklabs
+# exclude - a list of fileglob patterns from the conversion
+exclude:
+  - 'node_modules/**/*'
+  - 'articles/**/*.js'
+  - 'oldies/**/*'
 
-# Build settings
-markdown: kramdown
+# layout - if set, will use this layout as default one when no config is
+# found in the front yaml/json config.
+layout: 'post'
 
-kramdown:
-  parse_block_html: true
-
-gems:
-  - jekyll-paginate
+pages: &pages
+  files:
+    - '*.html'
+    - 'feed/index.xml'
+    - '**/*.md'
+    - '**/*.markdown'
+    - 'examples/**/*.js'
