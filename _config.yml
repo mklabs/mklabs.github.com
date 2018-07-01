@@ -6,7 +6,7 @@
 # 'jekyll serve'. If you change this file, please restart the server process.
 
 # Site settings
-url: "http://localhost"
+url: "https://mklabs.github.io/"
 port: 3000
 
 source:      .
@@ -22,7 +22,6 @@ permalink: 'articles/:title/'
 exclude:
   - 'node_modules/**/*'
   - 'articles/**/*.js'
-  - 'oldies/**/*'
 
 # layout - if set, will use this layout as default one when no config is
 # found in the front yaml/json config.
