@@ -35,3 +35,7 @@ pages: &pages
     - '**/*.md'
     - '**/*.markdown'
     - 'examples/**/*.js'
+
+# redirect homepage to about
+plugins:
+  - jekyll-redirect-from
