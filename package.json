@@ -18,14 +18,16 @@
     ]
   },
   "scripts": {
-    "serve": "serve h5bp",
+    "serve-search": "serve search",
     "browserify": "browserify -e search/search.js -o search/bundle.js",
-    "watch": "watchify search/search.js -p [livereactload] -o search/bundle.js"
+    "watch": "watchify search/search.js -o search/bundle.js -d -v"
   },
   "dependencies": {
     "bel": "^6.0.0",
     "delegate": "^3.0.1",
+    "hyperx": "^2.4.0",
     "jekyll-preview": "^1.0.0",
+    "lodash.throttle": "^4.1.1",
     "qs": "^6.2.0",
     "yields-k": "^0.7.2",
     "yo-yo": "^1.2.1"

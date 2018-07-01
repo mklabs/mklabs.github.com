@@ -3,20 +3,14 @@ const qs       = require('qs');
 const bel      = require('bel');
 const path     = require('path');
 const delegate = require('delegate');
+const throttle = require('throttle');
 
-const BASE_URL = 'http://mkla.bz/';
+const BASE_URL = 'http://mklabs.github.io/';
 
 // Search def
 class Search {
   get endpoint () {
     return 'https://api.github.com/search/code?q=';
-  }
-
-  get defaults () {
-    return {
-      language: 'markdown',
-      repo: 'mklabs/mklabs.github.com'
-    };
   }
 
   constructor (template, options = {}) {
@@ -25,50 +19,58 @@ class Search {
   }
 
   search (query, options = {}) {
-    this.query = query;
-
-    let opts = Object.assign({}, this.options, options);
-    return this.fetch(this.url(query, opts))
-      .then(this.dom.bind(this));
+    return this.fetch(query)
+      .then(this.dom.bind(this, query));
   }
 
   url (query, { language, repo }) {
     return this.endpoint + `${query}+in:file+language:${language}+repo:${repo}`;
   }
 
-  fetch (url) {
-    return fetch(url)
-      .catch(e => console.error('HTTP ERR', e))
-      .then(res => res.json())
-      .then(this.fetchBody)
+  fetch (query) {
+    const opts = { ...this.options };
+    const optsArchivedRepo = { ...this.options, repo: this.options.archivedRepo}
+
+    return Promise.all([
+      fetch(this.url(query, opts)),
+      fetch(this.url(query, optsArchivedRepo))
+    ])
+    .catch(e => console.error('HTTP ERR', e))
+    .then(([res, resArchived]) => {
+      return Promise.all([res.json(), resArchived.json()]);
+    })
+    .then(this.fetchBody)
   }
 
-  fetchBody(res) {
-    // todo
+  fetchBody([res, resArchived]) {
+    console.log('=>', res);
+    console.log('=>', resArchived);
     return res;
   }
 
-  dom (res) {
-    return this.template(res, this.query);
+  dom (query, res) {
+    return this.template(query, res);
   }
 }
 
 // Search entry point
-let opns = (template, options = {}) => {
+const opns = (template, options = {}) => {
   if (!template) throw new Error('Missing template');
   if (typeof template !== 'function') throw new Error('Template must be a function');
   return new Search(template, options);
 };
 
 // Templates
-let template = ({ items }, query) => {
+const template = (query,  { items }) => {
+  if (!items || !items.length) return noResult(query);
+
   return bel`<section class="js-result">
-    ${!items.length ? noResult(query) : items.map((item) => {
+    ${items.map((item) => {
       let name = path.basename(item.name)
       name = name.replace(/\d{4}-\d\d?-\d\d?-/, '');
       name = name.replace(/\.md/, '')
 
-      let parts = item.name.split('-')
+      const parts = item.name.split('-')
       let href = BASE_URL + parts.slice(0, 3).join('/') + '/' + parts.slice(3).join('-')
       href = href.replace(/\.md/, '.html')
 
@@ -84,33 +86,33 @@ let template = ({ items }, query) => {
 };
 
 // No result template helper
-let noResult = (query) => {
+const noResult = (query) => {
   return bel`<div class="opns-item">
     <p>No results for ${query}</p>
   </div>`;
 };
 
 // Init the view
-let view = opns(template, {
+const view = opns(template, {
   repo: 'mklabs/mklabs.github.com',
+  archivedRepo: 'mklabs/blog.mklog.fr',
   language: 'markdown'
 });
 
-let input = document.querySelector('.js-search');
-let container = document.querySelector('.js-results');
+const input = document.querySelector('.js-search');
+const container = document.querySelector('.js-results');
 
 delegate(document.body, '.js-search', 'input', (e) => {
-  let value = input.value;
+  const value = input.value;
   search(value);
 }, false);
 
-var initialQuery = qs.parse(location.search.replace(/^\?/, '')).q;
+let initialQuery = qs.parse(location.search.replace(/^\?/, '')).q;
 if (!initialQuery) {
   initialQuery = 'ES6';
 }
 
-let search = (value) => {
-  console.log('init query', value);
+const search = (value) => {
   return view.search(value)
     .then((el) => {
       yo.update(container, el)
