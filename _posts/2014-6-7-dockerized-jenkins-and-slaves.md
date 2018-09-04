@@ -1,9 +1,10 @@
 ---
 layout: post
 title: dockerized jenkins and slave
-published: false
+published: true
 ---
 
+**Note** This is a WIP blog post, and quite old. Be warn ;)
 I've been struggling with it quite a bit. The idea is to spawn up a
 dockerized [jenkins](http://jenkins-ci.org/) along [with slaves to
 execute the
