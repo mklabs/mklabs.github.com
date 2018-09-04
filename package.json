@@ -19,6 +19,7 @@
   },
   "scripts": {
     "serve-search": "serve search",
+    "jekyll": "bundle exec jekyll serve",
     "browserify": "browserify -e search/search.js -o search/bundle.js",
     "watch": "watchify search/search.js -o search/bundle.js -d -v"
   },
@@ -26,7 +27,7 @@
     "bel": "^6.0.0",
     "delegate": "^3.0.1",
     "hyperx": "^2.4.0",
-    "jekyll-preview": "^1.0.0",
+    "lodash.debounce": "^4.0.8",
     "lodash.throttle": "^4.1.1",
     "qs": "^6.2.0",
     "yields-k": "^0.7.2",

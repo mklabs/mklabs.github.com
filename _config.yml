@@ -18,10 +18,14 @@ description: "@mklabs website"
 lang: 'fr'
 permalink: 'articles/:title/'
 
+kramdown:
+  input: GFM
+  hard_wrap: false
+
 # exclude - a list of fileglob patterns from the conversion
 exclude:
   - 'node_modules/**/*'
-  - 'articles/**/*.js'
+  # - 'articles/**/*.js'
 
 # layout - if set, will use this layout as default one when no config is
 # found in the front yaml/json config.
@@ -35,6 +39,9 @@ pages: &pages
     - '**/*.markdown'
     - 'examples/**/*.js'
 
+paginate: 7
+
 # redirect homepage to about
 plugins:
   - jekyll-redirect-from
+  - jekyll-paginate
