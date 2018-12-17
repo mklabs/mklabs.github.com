@@ -177,3 +177,8 @@ pre > code { border: 0; padding-right: 0; padding-left: 0; }
 .site-title a:hover {
   color: #777;
 }
+
+img {
+  max-width: 100%;
+  vertical-align: middle;
+}
