@@ -15,11 +15,11 @@ It is actually implementing the game developed in [Introduction to Unreal Engine
 
 ---
 
-[![Menu](/assets/images/UE4Gasp/home_screen.png)](/assets/images/UE4Gasp/home_screen.png)
+[![Menu](/assets/images/UE4Gasp/test/home_screen.png)](/assets/images/UE4Gasp/test/home_screen.png)
 
 ---
 
-![Gameplay 01](/assets/images/UE4Gasp/gameplay_01.png)
+[![Gameplay 01](/assets/images/UE4Gasp/test/gameplay_01.png)](/assets/images/UE4Gasp/test/gameplay_01.png)
 
 ---
 
