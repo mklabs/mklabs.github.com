@@ -7,7 +7,7 @@ published: true
 
 I have the pleasure to talk here about the first "prototype" game that I was able to implement recently in Unreal Engine. I called it GASP for Gameplay Ability System Prototype:
 
-- [Download Link](https://github.com/mklabs/UE4Gasp/releases/download/v0.1.0/UE4Gasp_Windows_x64.zip)
+- [Download Link](https://github.com/mklabs/UE4Gasp/releases/download/v0.4.0/UE4Gasp_Windows_x64.zip)
 
 All releases can be downloaded from [the Release page](https://github.com/mklabs/UE4Gasp/releases) (in case I continue, to download the latest version).
 
