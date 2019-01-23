@@ -13,7 +13,7 @@ It was first developed and tested in Blueprints following the implementation of 
 
 ## Links
 
-- Marketplace: https://www.unrealengine.com/marketplace/target-system-component-plugin
+- Marketplace: [https://www.unrealengine.com/marketplace/target-system-component-plugin](https://www.unrealengine.com/marketplace/target-system-component-plugin)
 - Code: [https://github.com/mklabs/ue4-targetsystemplugin](https://github.com/mklabs/ue4-targetsystemplugin)
 - Releases: [https://github.com/mklabs/ue4-targetsystemplugin/releases](https://github.com/mklabs/ue4-targetsystemplugin/releases)
 - Setup and Installation: [https://github.com/mklabs/ue4-targetsystemplugin/wiki/Setup-and-Installation](https://github.com/mklabs/ue4-targetsystemplugin/wiki/Setup-and-Installation)
