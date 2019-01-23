@@ -13,15 +13,10 @@ It was first developed and tested in Blueprints following the implementation of 
 
 ## Links
 
+- Marketplace: https://www.unrealengine.com/marketplace/target-system-component-plugin
 - Code: [https://github.com/mklabs/ue4-targetsystemplugin](https://github.com/mklabs/ue4-targetsystemplugin)
 - Releases: [https://github.com/mklabs/ue4-targetsystemplugin/releases](https://github.com/mklabs/ue4-targetsystemplugin/releases)
 - Setup and Installation: [https://github.com/mklabs/ue4-targetsystemplugin/wiki/Setup-and-Installation](https://github.com/mklabs/ue4-targetsystemplugin/wiki/Setup-and-Installation)
-
-## Setup and Installation
-
-Here is a video that runs through the installation and setup process of this plugin (sorry for my uncomfortable english :))
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/CCXxvzHVPIQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## Thanks and Credits
 
