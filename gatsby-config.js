@@ -4,9 +4,26 @@ require(`dotenv`).config({
 
 const shouldAnalyseBundle = process.env.ANALYSE_BUNDLE
 
+const siteDescription = `I'm Mickael Daniel <mklabs>, a french gameplay developer, this is my portfolio site.`
+
 module.exports = {
   siteMetadata: {
-    siteTitleAlt: `Emma - Gatsby Starter Portfolio`,
+    // Used for the title template on pages other than the index site
+    siteTitle: `Mickael Daniel`,
+    // Default title of the page
+    siteTitleAlt: `Mickael Daniel <mklabs> - Portfolio`,
+    // Can be used for e.g. JSONLD
+    siteHeadline: `MD.`,
+    // Will be used to generate absolute URLs for og:image etc.
+    siteUrl: `https://mklabs.github.io`,
+    // Used for SEO
+    siteDescription,
+    // Will be set on the <html /> tag
+    siteLanguage: `en`,
+    // Used for og:image and must be placed inside the `static` folder
+    siteImage: `/banner.jpg`,
+    // Twitter Handle
+    author: `@mklabs`,
   },
   plugins: [
     {
@@ -24,9 +41,9 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Emma - @lekoarts/gatsby-theme-emma`,
-        short_name: `Emma`,
-        description: `Minimalistic bright portfolio with full-width grid and large images`,
+        name: `Mickael Daniel Website`,
+        short_name: `Mickael Daniel Website`,
+        description: siteDescription,
         start_url: `/`,
         background_color: `#fff`,
         theme_color: `#b83280`,
