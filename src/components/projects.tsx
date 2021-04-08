@@ -5,6 +5,7 @@ import { useTrail } from "react-spring"
 import { jsx, Heading, Container, Link } from "theme-ui"
 import ProjectItem from "@lekoarts/gatsby-theme-emma/src/components/project-item"
 
+const isBrowser = typeof window !== "undefined"
 
 type ProjectsProps = {
     projects: {
@@ -42,7 +43,7 @@ const categories = [{
 }]
 
 const Projects = ({ projects }: ProjectsProps) => {
-    const hash = location.hash.slice(1)
+    const hash = isBrowser ? location.hash.slice(1) : ""
     const defaultCategory = categories.find(category => hash === category.id)
     const [selected, setSelected] = useState(defaultCategory ? defaultCategory.id : "gamedev");
 
