@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+<url> <loc>https://mklabs.github.io/about</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://mklabs.github.io/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://mklabs.github.io/portfolio</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://mklabs.github.io/provinces-panel-enhanced</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://mklabs.github.io/modding-devtool-console-troy</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://mklabs.github.io/button-respec</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://mklabs.github.io/temples-list-panel-ui-ux-mod</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://mklabs.github.io/project-rune-wip</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://mklabs.github.io/gameplay-ability-system-prototype-gasp</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://mklabs.github.io/multiplayer-arpg-prototype</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://mklabs.github.io/modding-devtool-console-wh-2</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://mklabs.github.io/children-of-chaos-mod</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://mklabs.github.io/skaven-as-horde-mod</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+</urlset>
