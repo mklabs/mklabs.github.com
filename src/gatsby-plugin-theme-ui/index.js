@@ -2,7 +2,7 @@ import { merge } from "theme-ui"
 import { tailwind } from "@theme-ui/presets"
 
 export default merge(tailwind, {
-    initialColorModeName: `light`,
+    initialColorModeName: `dark`,
     useCustomProperties: true,
 
     colors: {
