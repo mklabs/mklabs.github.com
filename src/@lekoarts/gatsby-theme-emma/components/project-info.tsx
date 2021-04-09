@@ -30,7 +30,6 @@ type ProjectInfoProps = {
 
 const ProjectInfo = ({ project }: ProjectInfoProps) => (
     <Flex sx={{ mt: 4, mb: [2, 4], flexWrap: `wrap` }}>
-        {console.log(project)}
         { project.engine ? <Item name="Engine" content={project.engine} /> : "" }
         { project.game ? <Item name="game" content={project.game} /> : "" }
 

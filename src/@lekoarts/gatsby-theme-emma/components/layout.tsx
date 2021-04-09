@@ -3,12 +3,13 @@ import { Global } from "@emotion/core"
 import { Box } from "theme-ui"
 import { MDXProvider } from "@mdx-js/react"
 import useSiteMetadata from "@lekoarts/gatsby-theme-emma/src/hooks/use-site-metadata"
-import useNavigation from "@lekoarts/gatsby-theme-emma/src/hooks/use-navigation"
+import useNavigation from "../../../hooks/use-navigation"
 import SEO from "@lekoarts/gatsby-theme-emma/src/components/seo"
 import Footer from "./footer"
 import Header from "./header"
 import Youtube from "../../../components/youtube"
 import Slider from "../../../components/slider"
+import CodeStyles from "../../../styles/code"
 
 
 type LayoutProps = { children: React.ReactNode; className?: string }
@@ -50,7 +51,7 @@ const Layout = ({ children, className = `` }: LayoutProps) => {
             />
             <SEO />
             <Header meta={meta} nav={nav} />
-            <Box as="main" variant="layout.main" className={className}>
+            <Box as="main" variant="layout.main" className={className} sx={{ ...CodeStyles }}>
 
                 <MDXProvider components={shortcodes}>
                   {children}

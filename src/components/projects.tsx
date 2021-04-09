@@ -1,9 +1,9 @@
 /** @jsx jsx */
 import React, { useState } from "react"
+import { jsx, Heading, Container, Link } from "theme-ui"
 import { ChildImageSharp } from "@lekoarts/gatsby-theme-emma/src/types"
 import { useTrail } from "react-spring"
-import { jsx, Heading, Container, Link } from "theme-ui"
-import ProjectItem from "@lekoarts/gatsby-theme-emma/src/components/project-item"
+import ProjectItem from "./project-item"
 
 const isBrowser = typeof window !== "undefined"
 
@@ -58,13 +58,14 @@ const Projects = ({ projects }: ProjectsProps) => {
 
     const onCategoryClick = (e, id) => {
         setSelected(id)
+        location.hash = id
         e.preventDefault()
     }
 
     return (
         <React.Fragment>
             <Container>
-                <Heading as="h1" variant="styles.h1" sx={{ textAlign: 'center' }}>
+                <Heading as="h2" variant="styles.h2" sx={{ textAlign: 'center' }}>
                     Projects
                 </Heading>
 

@@ -2,18 +2,22 @@ require(`dotenv`).config({
   path: `.env`,
 })
 
+const withDefaults = require(`./utils/default-options`)
+
 const shouldAnalyseBundle = process.env.ANALYSE_BUNDLE
 
 const siteDescription = `I'm Mickael Daniel <mklabs>, a french gameplay developer, this is my portfolio site.`
+
+const options = withDefaults({})
 
 module.exports = {
   siteMetadata: {
     // Used for the title template on pages other than the index site
     siteTitle: `Mickael Daniel`,
     // Default title of the page
-    siteTitleAlt: `Mickael Daniel <mklabs> - Portfolio`,
+    siteTitleAlt: `<mklabs>`,
     // Can be used for e.g. JSONLD
-    siteHeadline: `MD.`,
+    siteHeadline: `MK.`,
     // Will be used to generate absolute URLs for og:image etc.
     siteUrl: `https://mklabs.github.io`,
     // Used for SEO
@@ -27,9 +31,16 @@ module.exports = {
   },
   plugins: [
     {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: options.postsPath,
+        path: options.postsPath,
+      },
+    },
+    {
       resolve: `@lekoarts/gatsby-theme-emma`,
       // See the theme's README for all available options
-      options: {},
+      options,
     },
     {
       resolve: `gatsby-plugin-google-analytics`,

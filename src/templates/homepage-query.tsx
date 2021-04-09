@@ -5,6 +5,7 @@ import Homepage from "../components/homepage"
 type Props = {
         data: {
                 allProject: any
+                allPost: any
                 [key: string]: string
         }
         [key: string]: any
@@ -12,14 +13,14 @@ type Props = {
 
 export default function EmmaCoreProjects({ ...props }: Props) {
         const {
-                data: { allProject },
+                data: { allProject, allPost },
         } = props
 
-        return <Homepage projects={allProject.nodes} {...props} />
+        return <Homepage projects={allProject.nodes} posts={allPost.nodes} {...props} />
 }
 
 export const query = graphql`
-    query {
+    query($formatString: String!) {
         allProject: allPortfolioProject(sort: { fields: date, order: DESC }) {
             nodes {
                 color
@@ -35,6 +36,21 @@ export const query = graphql`
                         }
                     }
                 }
+            }
+        }
+
+        allPost(sort: { fields: date, order: DESC }, limit: 3) {
+            nodes {
+              slug
+              title
+              date(formatString: $formatString)
+              excerpt
+              timeToRead
+              description
+              tags {
+                name
+                slug
+              }
             }
         }
 

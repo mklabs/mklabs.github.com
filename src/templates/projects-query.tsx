@@ -6,8 +6,6 @@ export default function EmmaCoreProjects({ ...props }: Props) {
             data: { allProject },
     } = props
 
-    console.log(props)
-
     return <ProjectsComponent projects={allProject.nodes} {...props} />
 }
 

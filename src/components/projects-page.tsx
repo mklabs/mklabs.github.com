@@ -3,6 +3,7 @@ import { jsx, Container, Styled } from "theme-ui"
 import { useTrail } from "react-spring"
 import Layout from "@lekoarts/gatsby-theme-emma/src/components/layout"
 import { ChildImageSharp } from "@lekoarts/gatsby-theme-emma/src/types"
+import SEO from "@lekoarts/gatsby-theme-emma/src/components/seo"
 import Projects from "./projects"
 
 type ProjectsProps = {
@@ -24,6 +25,8 @@ const ProjectsPage = ({ projects }: ProjectsProps) => {
             sx={{
             }}
         >
+            <SEO title="Portfolio" />
+
             <Projects projects={projects}/>
         </Layout>
     )
