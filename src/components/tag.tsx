@@ -30,7 +30,6 @@ type TagProps = {
 }
 
 const Tag = ({ posts, pageContext }: TagProps) => {
-    console.log(pageContext)
     const { tagsPath, basePath } = useMinimalBlogConfig()
 
     return (
