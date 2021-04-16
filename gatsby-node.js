@@ -28,6 +28,7 @@ exports.createSchemaCustomization = ({ actions, schema }, themeOptions) => {
       excerpt(pruneLength: Int = 160): String!
       body: String!
       category: String
+      order: Int
     }
 
     interface Post @nodeInterface {
@@ -75,6 +76,7 @@ exports.createSchemaCustomization = ({ actions, schema }, themeOptions) => {
       excerpt(pruneLength: Int = 140): String! @mdxpassthrough(fieldName: "excerpt")
       body: String! @mdxpassthrough(fieldName: "body")
       category: String
+      order: Int
     }
 
     type MinimalBlogConfig implements Node {
@@ -188,6 +190,8 @@ exports.onCreateNode = ({ node, actions, getNode, createNodeId, createContentDig
       game: node.frontmatter.game ? node.frontmatter.game : "",
       link: node.frontmatter.link ? node.frontmatter.link : "",
       linkDescription: node.frontmatter.linkDescription ? node.frontmatter.linkDescription : "Link",
+
+      order: node.frontmatter.order ? node.frontmatter.order : undefined,
 
       frontmatter: node.frontmatter
     }

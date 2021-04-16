@@ -21,7 +21,7 @@ export default function EmmaCoreProjects({ ...props }: Props) {
 
 export const query = graphql`
     query($formatString: String!) {
-        allProject: allPortfolioProject(sort: { fields: date, order: DESC }) {
+        allProject: allPortfolioProject(sort: {fields: [order, date], order: [ASC, DESC]}) {
             nodes {
                 color
                 slug
