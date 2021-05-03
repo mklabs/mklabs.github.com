@@ -22,9 +22,18 @@ export const query = graphql`
       linkDescription
       game
 
-      
-
       cover {
+        childImageSharp {
+          fluid(maxWidth: 1920, quality: 90) {
+            ...GatsbyImageSharpFluid_withWebp
+          }
+          resize(width: 800) {
+            src
+          }
+        }
+      }
+
+      banner {
         childImageSharp {
           fluid(maxWidth: 1920, quality: 90) {
             ...GatsbyImageSharpFluid_withWebp

@@ -37,6 +37,8 @@ const Project = ({ data: { mdxPortfolioProject: project } }: ProjectProps) => {
     const infoProps = useSpring({ config: config.slow, delay: 500, from: { opacity: 0 }, to: { opacity: 1 } })
     const contentProps = useSpring({ config: config.slow, delay: 1000, from: { opacity: 0 }, to: { opacity: 1 } })
 
+    const heroImage = project.banner ? project.banner : project.cover;
+
     return (
         <Layout>
             <SEO

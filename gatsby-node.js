@@ -29,6 +29,8 @@ exports.createSchemaCustomization = ({ actions, schema }, themeOptions) => {
       body: String!
       category: String
       order: Int
+
+      banner: File @fileByRelativePath
     }
 
     interface Post @nodeInterface {
@@ -77,6 +79,8 @@ exports.createSchemaCustomization = ({ actions, schema }, themeOptions) => {
       body: String! @mdxpassthrough(fieldName: "body")
       category: String
       order: Int
+
+      banner: File @fileByRelativePath
     }
 
     type MinimalBlogConfig implements Node {
@@ -193,6 +197,7 @@ exports.onCreateNode = ({ node, actions, getNode, createNodeId, createContentDig
 
       order: node.frontmatter.order ? node.frontmatter.order : undefined,
 
+      banner: node.frontmatter.banner,
       frontmatter: node.frontmatter
     }
 
