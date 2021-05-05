@@ -68,6 +68,15 @@ const Post = ({ data: { post } }: PostProps) => (
                 }}
             >
                 <MDXRenderer>{post.body}</MDXRenderer>
+
+                <script src="https://utteranc.es/client.js"
+                        repo="mklabs/mklabs.github.com"
+                        issue-term="pathname"
+                        label="post-comments"
+                        theme="photon-dark"
+                        crossOrigin="anonymous"
+                        async>
+                </script>
             </section>
         </Container>
     </Layout>
