@@ -12,7 +12,7 @@ const code = {
         backgroundColor: tint(`#131516`, 0.7),
     },
     ".prism-code": {
-        fontSize: [1, 1, 2],
+        fontSize: [1, 1, 1],
         padding: `2rem 1rem 1rem 1rem`,
         webkitOverflowScrolling: `touch`,
         backgroundColor: `transparent`,
@@ -42,7 +42,7 @@ const code = {
         borderRadius: `2px`,
     },
     ".gatsby-highlight": {
-        fontSize: [1, 1, 2],
+        fontSize: [1, 1, 1],
         position: `relative`,
         webkitOverflowScrolling: `touch`,
         bg: `rgb(1, 22, 39)`,

@@ -45,7 +45,7 @@ const Post = ({ data: { post } }: PostProps) => (
             canonicalUrl={post.canonicalUrl}
         />
         <Container>
-            <Heading as="h1" variant="styles.h1">
+            <Heading as="h1" variant="styles.h2">
                 {post.title}
             </Heading>
             
