@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+<url> <loc>https://gascompanion.github.io/GASCompanion/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://gascompanion.github.io/GASCompanion/api/gsc-blueprint-function-library</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://gascompanion.github.io/GASCompanion/api/gsc-ability-system-component</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://gascompanion.github.io/GASCompanion/api/gsc-character-base</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://gascompanion.github.io/GASCompanion/api/gschud</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://gascompanion.github.io/GASCompanion/api/gsc-gameplay-ability</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://gascompanion.github.io/GASCompanion/api/gsc-player-state</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://gascompanion.github.io/GASCompanion/api/gsck-2-node-switch-gameplay-attribute</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://gascompanion.github.io/GASCompanion/api/gsc-task-play-montage-wait-for-event</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://gascompanion.github.io/GASCompanion/api/gscuw-hud</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://gascompanion.github.io/GASCompanion/faq</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://gascompanion.github.io/GASCompanion/glossary</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://gascompanion.github.io/GASCompanion/install</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://gascompanion.github.io/GASCompanion/ability-queue-system</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://gascompanion.github.io/GASCompanion/attributeset-events</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://gascompanion.github.io/GASCompanion/gameplay-attributes</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://gascompanion.github.io/GASCompanion/cheat-manager</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://gascompanion.github.io/GASCompanion/configuration</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://gascompanion.github.io/GASCompanion/getting-started</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://gascompanion.github.io/GASCompanion/ignore-ability-cost</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://gascompanion.github.io/GASCompanion/usage/creating-docs</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://gascompanion.github.io/GASCompanion/usage/navigation</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://gascompanion.github.io/GASCompanion/usage/shadowing</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://gascompanion.github.io/GASCompanion/working-with-ui</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://gascompanion.github.io/GASCompanion/working-with-ai</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://gascompanion.github.io/GASCompanion/api</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+</urlset>
