@@ -20,27 +20,32 @@ type ProjectsProps = {
     [key: string]: any
 }
 
-const categories = [{
-    label: "All Categories",
-    content: "All",
-    href: "/portfolio#all",
-    id: "all"
-}, {
-    label: "Game Development",
-    content: "Game Development",
-    href: "/portfolio#gamedev",
-    id: "gamedev"
-}, {
-    label: "Modding",
-    content: "Modding",
-    href: "/portfolio#modding",
-    id: "modding"
-}, {
-    label: "Open Source Software",
-    content: "OSS",
-    href: "/portfolio#oss",
-    id: "oss"
-}]
+const categories = [
+    {
+        label: "All Categories",
+        content: "All",
+        href: "/portfolio#all",
+        id: "all"
+    },
+    {
+        label: "Game Development",
+        content: "Game Development",
+        href: "/portfolio#gamedev",
+        id: "gamedev"
+    },
+    {
+        label: "Modding",
+        content: "Modding",
+        href: "/portfolio#modding",
+        id: "modding"
+    },
+    // {
+    //     label: "Open Source Software",
+    //     content: "OSS",
+    //     href: "/portfolio#oss",
+    //     id: "oss"
+    // }
+]
 
 const Projects = ({ projects }: ProjectsProps) => {
     const hash = isBrowser ? location.hash.slice(1) : ""

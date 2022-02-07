@@ -52,7 +52,7 @@ const Project = ({ data: { mdxPortfolioProject: project } }: ProjectProps) => {
                 {/* <meta name="twitter:data1" value={project.client} /> */}
                 <meta name="twitter:data2" value={project.date} />
             </SEO>
-            <Hero image={project.cover.childImageSharp.fluid} color={project.color}>
+            <Hero image={heroImage.childImageSharp.fluid} color={project.color}>
                 <Flex
                     sx={{
                         position: `absolute`,
