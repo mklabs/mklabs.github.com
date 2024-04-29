@@ -44,7 +44,7 @@ export default function Footer() {
           </a>
         </li>
       </ul>
-      <p className="mt-8 text-neutral-600 dark:text-neutral-300">
+      <p className="mt-8 text-neutral-600 dark:text-base-500">
         © {new Date().getFullYear()} {title}
       </p>
     </footer>
