@@ -1,0 +1,1 @@
+// To trick VSCode extension into thinking we're using v3
