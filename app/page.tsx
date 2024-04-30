@@ -21,7 +21,8 @@ export default function Page() {
       </p>
 
       <p className="mb-4">
-        I was part of the engineering team behind the <a className={linksClassnames} href="https://dev.epicgames.com/documentation/en-us/unreal-engine/unreal-engine-5.4-release-notes">Motion Design</a> project and the main developer of Storm Sync.
+        I was part of the engineering team behind the <a className={linksClassnames} href="https://dev.epicgames.com/community/learning/courses/XRV/unreal-engine-your-first-graphic-with-motion-design/Vp00/unreal-engine-motion-design-getting-started">Motion Design</a> project and the main developer of&nbsp;
+        <a className={linksClassnames} href="https://dev.epicgames.com/community/learning/courses/XRV/unreal-engine-your-first-graphic-with-motion-design/JpkE/unreal-engine-using-storm-sync-to-package-your-content">Storm Sync</a>.
       </p>
 
       <p>
@@ -29,6 +30,8 @@ export default function Page() {
       </p>
 
       <div className="my-8">
+        <h2 className="mb-4 text-lg text-base-600 dark:text-base-500">Writing</h2>
+
         <BlogPosts />
       </div>
     </section>
