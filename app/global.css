@@ -80,6 +80,10 @@ html {
   min-width: 360px;
 }
 
+body {
+  font-size: 1.1em;
+}
+
 .prose .anchor {
   @apply absolute invisible no-underline;
 
@@ -111,8 +115,6 @@ html {
   @apply bg-neutral-50 dark:bg-neutral-900 rounded-lg overflow-x-auto border border-neutral-200 dark:border-neutral-900 text-sm;
   @apply -mx-24 my-6;
   @apply py-3 px-4;
-
-  
 }
 
 .prose code {
