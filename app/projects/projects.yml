@@ -1,0 +1,89 @@
+projects:
+  - name: GAS Companion
+    date: 2021
+    description: A plugin aiming to make GAS more approachable and easier to start with.
+    url: 'https://www.unrealengine.com/marketplace/en-US/product/gas-companion'
+
+  - name: Combo Graph
+    date: 2022
+    description: Plugin extension to GAS providing Ability Task to create, define and play combos with a custom node graph based interface.
+    url: https://www.unrealengine.com/marketplace/en-US/product/combo-graph
+
+  - name: Blueprint Attributes
+    date: 2024
+    description: Blueprint Attributes is a plugin extension for GAS, fully exposing Gameplay Attributes and Attribute Sets to Blueprints.
+    url: https://www.unrealengine.com/marketplace/en-US/product/gameplay-blueprint-attributes
+
+  - name: Storm Sync
+    date:
+      - 2022
+      - 2023
+    description: Sync, Pull, Push, asset dependencies.
+    url: /projects/storm-sync
+
+  - name: Temples List Panel (UI/UX mod) for Total War Troy
+    date: 2020
+    url: https://steamcommunity.com/sharedfiles/filedetails/?id=2604076774
+    description: Adds a new UI panel to the campaign to list all owned capitals, similar to the provinces list. ([Link to Epic mod page ↗](https://store.epicgames.com/en-US/mods/a-total-war-saga-troy--d1c66ba556a342e8abd2c4379c111b88))
+
+  - name: Provinces Panel Enhanced (UI/UX mod) for Total War Troy
+    date: 2020
+    url: https://steamcommunity.com/sharedfiles/filedetails/?id=2604075726
+    description: UI Mod to adjust the Province Panel with information about Influences, Edicts and Highest Building Level in your owned provinces and regions. ([Link to Epic mod page ↗](https://store.epicgames.com/en-US/mods/a-total-war-saga-troy--bf77ccb692e5416f9e5402b213d1a4a5))
+
+  - name: Respec Button mod for Total War Troy
+    date: 2020
+    url: https://steamcommunity.com/sharedfiles/filedetails/?id=2604076620
+    description: |
+      Adds a single button to the character UI to fully respec the character's skills, heroes and agents.
+      ([Link to Epic mod page ↗](https://store.epicgames.com/en-US/mods/a-total-war-saga-troy--0dda06cd862d44c3b7e38e47667f00f0))
+
+  - name: Modding Devtool Console for Total War Troy
+    date: 2020
+    url: https://store.epicgames.com/en-US/mods/a-total-war-saga-troy--1e5c001242fd4169a1d2f2a7b8d2d1c9
+    description: |
+      Provides a basic REPL (read eval print loop) within the game for the LUA exposed API to modders. Directly inspired by browsers
+      developer tools console such as Chrome devtool.
+
+  - name: Target System plugin
+    date: 2019
+    url: https://github.com/mklabs/ue4-targetsystemplugin
+    description: Dark Souls inspired Camera Lock On / Targeting system
+
+  - name: Modding Devtool Console for Total War Warhammer 2
+    date: 2018
+    url: https://steamcommunity.com/sharedfiles/filedetails/?id=1574469690
+    description: Provides a basic REPL (read eval print loop) within the game for the LUA exposed API to modders. Directly inspired by browsers developer tools console such as Chrome devtool.
+
+  - name: Skaven as Horde Mod for Total War Warhammer 2
+    date: 2018
+    url: https://steamcommunity.com/sharedfiles/filedetails/?id=1556936886
+    description: Implements a new Skaven faction with horde mechanics.
+
+  - name: Beastmen Children of Chaos Mod for Total War Warhammer 2
+    date: 2018
+    url: https://steamcommunity.com/sharedfiles/filedetails/?id=1358383646
+    description: My first attempt at modding, which ultimately led me to game development.
+
+  - name: tiny-lr
+    date: 2012
+    url: https://github.com/mklabs/tiny-lr
+    description: tiny livereload (npm module)
+
+  - name: tabtab
+    date: 2011
+    url: https://github.com/mklabs/tiny-lr
+    description: tab completion helpers, for node cli programs & others. Inspired by npm completion (npm module)
+
+  - name: Yeoman
+    date:
+      - 2012
+      - 2013
+    url: https://yeoman.io/blog/hello-1.0
+    description: Scaffolding tool for modern webapps. I was part of the early core team and worked closely with Sindre, Addy and Paul up until the 1.0 release, followed quickly by an awesome list of contributors.
+
+  - name: node-build-script
+    date: 2012
+    url: https://github.com/mklabs/node-build-script
+    description: A port of [h5bp](https://html5boilerplate.com) build script to nodejs, which eventually became the foundation of early yeoman.
+

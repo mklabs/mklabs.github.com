@@ -1,4 +1,4 @@
-import { ProjectsPosts } from 'app/components/projects'
+import { ProjectsPosts, YamlProjectsList } from 'app/components/projects'
 import { title } from 'app/vars'
 
 export const metadata = {
@@ -7,10 +7,16 @@ export const metadata = {
 }
 
 export default function Page() {
-  return (
-    <section>
+  return (<>
+    {/* <section>
       <h1 className="font-semibold text-2xl mb-8 tracking-tighter">Projects</h1>
       <ProjectsPosts />
+    </section> */}
+
+    <section>
+      <h1 className="font-semibold text-2xl mb-8 tracking-tighter">Projects</h1>
+      <YamlProjectsList />
     </section>
+  </>
   )
 }

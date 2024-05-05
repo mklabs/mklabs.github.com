@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { MDXRemote } from 'next-mdx-remote/rsc'
+import { serialize } from 'next-mdx-remote/serialize'
 import { highlight } from 'sugar-high'
 import React from 'react'
 
@@ -53,6 +54,25 @@ function Code({ children, ...props }) {
   return <code dangerouslySetInnerHTML={{ __html: codeHTML }} {...props} />
 }
 
+function Youtube({ children, ...props }) {
+  const { id, className } = props;
+  const url = `https://www.youtube.com/embed/${id}`;
+
+  const classnames = className ?? 'my-8';
+
+  return (
+    <iframe
+      className={classnames}
+      width="560"
+      height="315"
+      src={url}
+      title="YouTube video player"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      referrerPolicy="strict-origin-when-cross-origin"
+      allowFullScreen></iframe>
+  );
+}
+
 function slugify(str) {
   return str
     .toString()
@@ -97,6 +117,7 @@ let components = {
   a: CustomLink,
   code: Code,
   Table,
+  Youtube,
 }
 
 export function CustomMDX(props) {

@@ -10,6 +10,7 @@ const navItems = {
   '/projects': {
     name: 'projects',
   },
+
   // 'https://example.com': {
   //   name: 'external link',
   // },

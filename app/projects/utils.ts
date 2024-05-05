@@ -1,5 +1,8 @@
 import fs from 'fs'
 import path from 'path'
+import { parse, stringify } from 'yaml'
+
+import { readFile } from 'fs/promises'
 
 type Metadata = {
   title: string
@@ -100,4 +103,19 @@ export function formatDate(date: string, includeRelative = false) {
   }
 
   return `${fullDate} (${formattedDate})`
+}
+
+export type Project = {
+  name: string,
+  date: string | [string],
+  description: string
+  url: string
+};
+
+export async function getProjectsYaml(): Promise<{ file: any, yaml: { projects: [Project] } }> {
+  const filepath = path.join(process.cwd(), 'app', 'projects', 'projects.yml');
+  const file = await readFile(filepath, { encoding: 'utf-8' });
+  const yaml = parse(file);
+
+  return { file, yaml };
 }
