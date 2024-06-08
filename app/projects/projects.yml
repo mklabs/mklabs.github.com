@@ -14,12 +14,12 @@ projects:
     description: Blueprint Attributes is a plugin extension for GAS, fully exposing Gameplay Attributes and Attribute Sets to Blueprints.
     url: https://www.unrealengine.com/marketplace/en-US/product/gameplay-blueprint-attributes
 
-  # - name: Storm Sync
-  #   date:
-  #     - 2022
-  #     - 2023
-  #   description: Sync, Pull, Push, asset dependencies.
-  #   url: /projects/storm-sync
+  - name: Storm Sync
+    date:
+      - 2022
+      - 2023
+    description: Sync, Pull, Push, asset dependencies.
+    url: /projects/storm-sync
 
   - name: Temples List Panel (UI/UX mod) for Total War Troy
     date: 2020

@@ -20,11 +20,10 @@ export default function Page() {
         plugins.
       </p>
 
-      {/* Until clarification upon whether I'm allowed to tell as part of my bio that I was involved with Storm Sync  */}
-      {/* <p className="mb-4">
+      <p className="mb-4">
         I was part of the engineering team behind the <a className={linksClassnames} href="https://dev.epicgames.com/community/learning/courses/XRV/unreal-engine-your-first-graphic-with-motion-design/Vp00/unreal-engine-motion-design-getting-started">Motion Design</a> project and the main developer of&nbsp;
         <a className={linksClassnames} href="https://dev.epicgames.com/community/learning/courses/XRV/unreal-engine-your-first-graphic-with-motion-design/JpkE/unreal-engine-using-storm-sync-to-package-your-content">Storm Sync</a>.
-      </p> */}
+      </p>
 
       <p>
         I'm currently working on <a className={linksClassnames} href="https://www.moonray.game">Moonray</a>, an exciting fast paced, melee-focused multiplayer game.
