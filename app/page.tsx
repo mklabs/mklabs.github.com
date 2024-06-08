@@ -26,7 +26,7 @@ export default function Page() {
       </p>
 
       <p>
-        I'm currently working on <a className={linksClassnames} href="https://www.moonray.game">Moonray</a>, an exciting fast paced, melee-focused multiplayer game.
+        I'm currently working on an upcoming melee-focused multiplayer arena game.
       </p>
 
       <div className="my-8">
