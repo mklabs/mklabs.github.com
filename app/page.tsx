@@ -13,20 +13,19 @@ export default function Page() {
       <p className="mb-4">Hi, I'm Mickael. You may also know me as <em>mklabs</em>.</p>
 
       <p className="mb-4">
-        I'm an Unreal Engine gameplay &amp; tools developer living in France. I created&nbsp;
+        I'm an Unreal Engine gameplay &amp; tools developer from France and working at <a className={linksClassnames} href="https://www.geotech.one">Geotech</a>.
+      </p>
+
+      <p className="mb-4">
+      I created&nbsp;
         <a className={linksClassnames} href="https://www.unrealengine.com/marketplace/en-US/product/gas-companion">GAS Companion</a>,&nbsp;
         <a className={linksClassnames} href="https://www.unrealengine.com/marketplace/en-US/product/combo-graph">Combo Graph</a> and&nbsp;
-        <a className={linksClassnames} href="https://www.unrealengine.com/marketplace/en-US/product/gameplay-blueprint-attributes">Blueprint Attributes</a>&nbsp;
-        plugins.
+        <a className={linksClassnames} href="https://www.unrealengine.com/marketplace/en-US/product/gameplay-blueprint-attributes">Blueprint Attributes</a> plugins.
       </p>
 
       <p className="mb-4">
         I was part of the engineering team behind the <a className={linksClassnames} href="https://dev.epicgames.com/community/learning/courses/XRV/unreal-engine-your-first-graphic-with-motion-design/Vp00/unreal-engine-motion-design-getting-started">Motion Design</a> project and the main developer of&nbsp;
         <a className={linksClassnames} href="https://dev.epicgames.com/community/learning/courses/XRV/unreal-engine-your-first-graphic-with-motion-design/JpkE/unreal-engine-using-storm-sync-to-package-your-content">Storm Sync</a>.
-      </p>
-
-      <p>
-        I'm currently working on an upcoming melee-focused multiplayer arena game.
       </p>
 
       <div className="my-8">
